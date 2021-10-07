@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="2.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+    exclude-result-prefixes="#all">
+    
+    <!-- For output we want to create an html file. -->
+    <xsl:output method="html"/>
+    
+    
+    <!-- This template deals with everything displayed on the html page -->
+    <xsl:template match="/">
+        <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <head>
+                <title>Where To Open</title>
+                <style type="text/css"> /* internal css code for formatting */
+                    .main{
+                    text-align:center;
+                    margin-top:5%;
+                    width:100%;
+                    font-size:220%;
+                    color:white;
+                    font-weight:600;
+                    height:10%;
+                    }
+                    body{
+                    margin: 0;
+                    background: linear-gradient(45deg, #49a09d, #5f2c82);
+                    font-family: sans-serif;
+                    height:100%;
+                    width:100%;
+                    overflow:hidden;
+                    }
+                    table { 
+                    border-collapse: collapse;
+                    font-size:90%;
+                    font-weight:400;
+                    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                    }
+                    td{
+                    padding: 5px;
+                    background-color: rgba(255,255,255,0.2);
+                    color: white;
+                    text-align: center;
+                    }
+                    th {
+                    background-color:#55608f;
+                    text-align:left;
+                    padding: 15px;
+                    font-weight: 400;
+                    color: white;
+                    background-color:#55608f;
+                    }
+                    .wrap{
+                    width:100%;
+                    height:79%;
+                    margin:0 auto;
+                    overflow:hidden;
+                    }
+                    .tablelist {   /* left side of the page */
+                    transform: translate(-50%, -50%);
+                    overflow:scroll;
+                    width: 680px;
+                    top:55%;
+                    left:29%;
+                    height:55%;
+                    position:absolute;
+                    }
+                    .details{   /* subsections of left side */
+                    text-align:left;
+                    width: 640px;
+                    font-weight:400;
+                    }
+                    .each_recommend{    /* info about each subsection */
+                    font-size:100%;
+                    text-align:left;
+                    line-height:160%;
+                    padding-bottom:10px;
+                    }
+                    .right{  /* right side of the page */
+                    margin-top:18%;
+                    margin-left:75%;
+                    position:absolute;
+                    transform: translate(-50%, -50%);
+                    overflow:scroll;
+                    width:550px;
+                    height:70%;
+                    }
+                    .location_section{   /* subsections of right side */
+                    color:white;
+                    background-color: rgba(255,255,255,0.2);
+                    text-align:center;
+                    font-size:160%;
+                    font-weight: 200;
+                    }
+                    .each_location{    /* info about each restaurant */
+                    font-size:60%;
+                    text-align:left;
+                    line-height:100%;
+                    padding-left:10px;
+                    padding-right:10px;
+                    }
+                    span{
+                    color:LightCyan;
+                    }
+                    .footer{
+                    margin-top:580px;
+                    color:white;
+                    text-align:center;
+                    font-size:120%;
+                    font-weight:200;
+                    }
+                    a:link {
+                    color:LightCyan;
+                    }
+                    a:visited {
+                    color:LightCyan;
+                    }
+                    a:hover {
+                    color:#98C1D9;
+                    text-decoration:none;
+                    }
+                    a:active {
+                    color:EE6C4D;
+                    text-decoration:none;
+                    }
+                    
+                </style>
+            </head>
+            <body style="font-family:Arial;font-size:12pt;background-color:#FFFFFF">
+                
+                <h1 class="main">「  &#160;Open Your Restaurant in London &#160; 」</h1>
+                
+                <!-- container of the page -->    
+                <div class="wrap">
+                
+                <!-- left side of the page -->    
+                    <div class="tablelist">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Locations</th>
+                                    <th>European</th>
+                                    <th>Asian</th>
+                                    <th>Mid Eastern</th>
+                                    <th>American</th>
+                                    <th>African</th>
+                                    <th>Fusion</th>
+                                </tr>
+                            </thead>
+                            <xsl:for-each select="/TEI/text">
+                                <xsl:apply-templates select="."/>
+                            </xsl:for-each>
+                        </table>
+                        
+                    <!-- what you see when you scroll down the left side of the page -->    
+                    <div class="details">
+                        <h2 style="background-color:rgba(255,255,255,0.4);font-weight:200;width:640px;font-size:150%;color:white;text-align:center;line-height:50px"> 
+                             Discover More
+                        </h2>
+                        <xsl:for-each select="/TEI/text"> 
+                            <div class="each_recommend" style="color:white;background-color:rgba(255,255,255,0.2);font-weight:200;width:640px;">
+                                <h2 style="background-color:rgba(255,255,255,0.2);font-weight:300;font-size:150%;color:white;line-height:50px;text-align:center"> 
+                                    <xsl:apply-templates select="front/div1/head"/>
+                                    <xsl:apply-templates select="body/div1/num"/>
+                                </h2>
+                                    <xsl:for-each select="body/div1/div2">
+                                    <p><xsl:apply-templates select="head/name"/>
+                                       <xsl:apply-templates select="p/desc"/>
+                                    </p>
+                                    </xsl:for-each>
+                            </div>
+                        </xsl:for-each>
+                    </div>
+                </div>
+                
+                <!-- right side of the page -->    
+                <div class="right">
+                   <div class="location_section">
+                       <p style="background-color: rgba(255,255,255,0.2);font-weight:300;line-height:50px">Nearest Tube Stations </p>
+                       <div class="each_location" style="line-height:150%">
+                           <p><a href="http://www.londontown.com/TransportInformation/Sights_and_Attractions/Chinatown/c6ab/">Chinatown</a><xsl:text> &#160;&#160;&#160;</xsl:text> Piccadilly Circus++<xsl:text> &#160;&#160;</xsl:text> Leicester Square++</p>
+                           <p><a href="http://www.londontown.com/TransportInformation/Travel/Kings_Cross_Station/4a5b/">King's Cross</a><xsl:text> &#160;&#160;&#160;</xsl:text> King's Cross St Pancras+++++</p>
+                           <p><a href="http://www.londontown.com/LondonInformation/Underground_Stations/Holborn/3351/">Horborn</a><xsl:text> &#160;&#160;&#160;</xsl:text> Horborn++</p>
+                           <p><a href="http://www.londontown.com/TransportInformation/Underground_Stations/Covent_Garden/6489/">Covent Gardern</a><xsl:text> &#160;&#160;&#160;</xsl:text> Covent Gardern+<xsl:text> &#160;&#160;</xsl:text> Leicester Square++</p>
+                           <p><a href="http://www.londontown.com/TransportInformation/Entertainment/Soho-Square/e668b/">Soho</a><xsl:text> &#160;&#160;&#160;</xsl:text> Oxford Circus+++<xsl:text> &#160;&#160;</xsl:text> Tottenham Court Road++<xsl:text> &#160;&#160;</xsl:text> Piccadilly Circus++<xsl:text> &#160;&#160;</xsl:text> Leicester Square++</p>
+                           <p><a href="http://www.londontown.com/TransportInformation/LondonHotels/The-MayFair-Hotel-London/154435/">Mayfair</a><xsl:text> &#160;&#160;&#160;</xsl:text> Green Park++</p>
+                           <p><a href="http://www.londontown.com/TransportInformation/Underground_Stations/South_Kensington/9a3e//">South Kensington</a><xsl:text> &#160;&#160;&#160;</xsl:text> South Kensington+++</p>
+                           <p><a href="http://www.londontown.com/TransportInformation/Practical_Information/Islington/272f/">Islington</a><xsl:text> &#160;&#160;&#160;</xsl:text> Highbury &amp; Islington+</p>
+                           <p><a href="http://www.londontown.com/TransportInformation/Entertainment/The_Hammersmith_Apollo/86b9/">Hammersmith</a><xsl:text> &#160;&#160;&#160;</xsl:text> Hammersmith+++</p>
+                           <p><a href="http://www.londontown.com/TransportInformation/Attractions/Fitzrovia/5bbd6/">Fitzrovia</a><xsl:text> &#160;&#160;&#160;</xsl:text> Warren Street ++<xsl:text> &#160;&#160;</xsl:text> Regent's Park+<xsl:text> &#160;&#160;</xsl:text> Goodge Street+<xsl:text> &#160;&#160;</xsl:text> Great Portland Street+++</p>
+                           <span style="float:right"> + sign represents the number of tube lines </span>
+                            <br/>
+                        </div>
+                   </div>
+                   <div class="location_section">
+                       <p style="background-color: rgba(255,255,255,0.2);font-weight: 300;">Popular Asian Food List</p>
+                       <div class="each_location">
+                           <xsl:apply-templates select="/TEI/text/body/div1/div2[./p/desc/rs='Chinese' or ./p/desc/rs/choice/corr='Chinese' or ./p/desc/rs/supplied='Chinese' 
+                               or ./p/desc/rs='Japanese' or ./p/desc/rs/choice/corr='Japanese'or ./p/desc/rs/supplied='Japanese'
+                               or ./p/desc/rs='Korean' or ./p/desc/rs/choice/corr='Korean'or ./p/desc/rs/supplied='Korean' 
+                               or ./p/desc/rs='Thai' or ./p/desc/rs/choice/corr='Thai'or ./p/desc/rs/supplied='Thai'
+                               or ./p/desc/rs='Indian' or ./p/desc/rs/choice/corr='Indian'or ./p/desc/rs/supplied='Indian'
+                               or ./p/desc/rs='Vietnamese' or ./p/desc/rs/choice/corr='Vietnamese'or ./p/desc/rs/supplied='Vietnamese'
+                               or ./p/desc/rs='Malaysian' or ./p/desc/rs/choice/corr='Malaysian'or ./p/desc/rs/supplied='Malaysian'
+                               ]"/>
+                               
+                           <br/>
+                       </div>
+                   </div>
+                   <div class="location_section">
+                       <p style="background-color: rgba(255,255,255,0.2);font-weight:300;">Popular Asian Food List</p>
+                       <div class="each_location">
+                           <xsl:apply-templates select="/TEI/text/body/div1/div2[./p/desc/rs='British' or ./p/desc/rs/choice/corr='British'or ./p/desc/rs/supplied='British' 
+                               or ./p/desc/rs='Italian' or ./p/desc/rs/choice/corr='Italian'or ./p/desc/rs/supplied='Italian'
+                               or ./p/desc/rs='French' or ./p/desc/rs/choice/corr='French'or ./p/desc/rs/supplied='French' 
+                               or ./p/desc/rs='German' or ./p/desc/rs/choice/corr='German'or ./p/desc/rs/supplied='German'
+                               or ./p/desc/rs='Polish' or ./p/desc/rs/choice/corr='Polish'or ./p/desc/rs/supplied='Polish'
+                               or ./p/desc/rs='Spanish' or ./p/desc/rs/choice/corr='Spanish'or ./p/desc/rs/supplied='Spanish'
+                               or ./p/desc/rs='Mediterranean' or ./p/desc/rs/choice/corr='Mediterranean'or ./p/desc/rs/supplied='Mediterranean'
+                               or ./p/desc/rs='European' or ./p/desc/rs/choice/corr='European'or ./p/desc/rs/supplied='European'
+                               ]"/>
+                              
+                           <br/>
+                       </div>
+                   </div>
+                   <div class="location_section">    
+                       <p style="background-color: rgba(255,255,255,0.2);font-weight: 300;">Popular Asian Food List</p>
+                       <div class="each_location">
+                           <xsl:apply-templates select="/TEI/text/body/div1/div2[./p/desc/rs='Afghan' or ./p/desc/rs/choice/corr='Afghan' or ./p/desc/rs/supplied='Afghan' 
+                               or ./p/desc/rs='Lebanese' or ./p/desc/rs/choice/corr='Lebanese'or ./p/desc/rs/supplied='Lebanese'
+                               or ./p/desc/rs='Middle Eastern' or ./p/desc/rs/choice/corr='Middle Eastern'or ./p/desc/rs/supplied='Middle Eastern' 
+                               or ./p/desc/rs='Iranian' or ./p/desc/rs/choice/corr='Iranian'or ./p/desc/rs/supplied='Iranian'
+                               ]"/>
+                           <br/>
+                       </div>
+                   </div>
+                   <div class="location_section">
+                       <p style="background-color: rgba(255,255,255,0.2);font-weight: 300;">Popular Asian Food List</p>
+                        <div class="each_location">
+                            <xsl:apply-templates select="/TEI/text/body/div1/div2[./p/desc/rs='American' or ./p/desc/rs/choice/corr='American' or ./p/desc/rs/supplied='American' 
+                                or ./p/desc/rs='Peruvian' or ./p/desc/rs/choice/corr='Peruvian'or ./p/desc/rs/supplied='Peruvian'
+                                or ./p/desc/rs='Mexican' or ./p/desc/rs/choice/corr='Mexican'or ./p/desc/rs/supplied='Mexican'
+                                ]"/>
+                            <br/>
+                        </div>
+                   </div>
+                   <div class="location_section">
+                       <p style="background-color: rgba(255,255,255,0.2);font-weight: 300;">Popular Asian Food List</p>
+                        <div class="each_location">
+                            <xsl:apply-templates select="/TEI/text/body/div1/div2[./p/desc/rs='Moroccan' or ./p/desc/rs/choice/corr='Moroccan' or ./p/desc/rs/supplied='Moroccan']"/>
+                            <br/>
+                        </div>
+                   </div>
+                    
+                   <div class="location_section">
+                       <p style="background-color: rgba(255,255,255,0.2);font-weight: 300;">Popular Asian Food List</p>
+                        <div class="each_location">
+                            <xsl:apply-templates select="/TEI/text/body/div1/div2[./p/desc/rs='Fusion' or ./p/desc/rs/choice/corr='Fusion' or ./p/desc/rs/supplied='Fusion']"/>
+                            <br/>
+                        </div>
+                   </div>
+                </div>
+                    
+                <!-- Editorial information . -->    
+                <div class="footer">
+                    Text source From Timeout 
+                    <a href=" https://www.timeout.com/london/restaurants/where-to-eat-in-chinatown">[1]</a> 
+                    <a href="https://www.timeout.com/london/restaurants/kings-cross-restaurants">[2]</a>
+                    <a href="https://www.timeout.com/london/restaurants/holborn-restaurants">[3]</a> 
+                    <a href=" https://www.timeout.com/london/restaurants/covent-garden-restaurants">[4]</a> 
+                    <a href=" https://www.timeout.com/london/restaurants/restaurants-in-soho-london">[5]</a>  
+                    <a href=" https://www.timeout.com/london/restaurants/mayfair-restaurants">[6]</a> 
+                    <a href=" https://www.timeout.com/london/restaurants/south-kensingtons-best-restaurants">[7]</a> 
+                    <a href=" https://www.timeout.com/london/restaurants/islington-restaurants">[8]</a> 
+                    <a href=" https://www.timeout.com/london/restaurants/hammersmith-restaurants">[9]</a> 
+                    <a href=" https://www.timeout.com/london/restaurants/the-best-restaurants-in-fitzrovia">[10]</a> 
+                    ; Last Editted by 20053281 on 16/04/2021
+                </div>
+                </div>
+            </body>
+        </html>
+    </xsl:template>
+    
+    <!-- This template builds the table content on the left side using count function to summarize the number of restaurants of each category in each area. -->
+    <xsl:template match="text">
+        <tr><td style="text-align:left;margin-left:5%;font-weight:200;"><xsl:apply-templates select="front/div1/head"/></td>
+        <xsl:for-each select="body/div1">
+            <div class="region">
+                
+                <td><xsl:value-of select="count(./div2[./p/desc/rs='British' or ./p/desc/rs/choice/corr='British'or ./p/desc/rs/supplied='British' 
+                    or ./p/desc/rs='Italian' or ./p/desc/rs/choice/corr='Italian'or ./p/desc/rs/supplied='Italian'
+                    or ./p/desc/rs='French' or ./p/desc/rs/choice/corr='French'or ./p/desc/rs/supplied='French' 
+                    or ./p/desc/rs='German' or ./p/desc/rs/choice/corr='German'or ./p/desc/rs/supplied='German'
+                    or ./p/desc/rs='Polish' or ./p/desc/rs/choice/corr='Polish'or ./p/desc/rs/supplied='Polish'
+                    or ./p/desc/rs='Spanish' or ./p/desc/rs/choice/corr='Spanish'or ./p/desc/rs/supplied='Spanish'
+                    or ./p/desc/rs='Mediterranean' or ./p/desc/rs/choice/corr='Mediterranean'or ./p/desc/rs/supplied='Mediterranean'
+                    or ./p/desc/rs='European' or ./p/desc/rs/choice/corr='European'or ./p/desc/rs/supplied='European'
+                        ])"/> 
+                </td>
+                
+                <td>
+                    <xsl:value-of select="count(./div2[./p/desc/rs='Chinese' or ./p/desc/rs/choice/corr='Chinese' or ./p/desc/rs/supplied='Chinese' 
+                        or ./p/desc/rs='Japanese' or ./p/desc/rs/choice/corr='Japanese'or ./p/desc/rs/supplied='Japanese'
+                        or ./p/desc/rs='Korean' or ./p/desc/rs/choice/corr='Korean'or ./p/desc/rs/supplied='Korean' 
+                        or ./p/desc/rs='Thai' or ./p/desc/rs/choice/corr='Thai'or ./p/desc/rs/supplied='Thai'
+                        or ./p/desc/rs='Indian' or ./p/desc/rs/choice/corr='Indian'or ./p/desc/rs/supplied='Indian'
+                        or ./p/desc/rs='Vietnamese' or ./p/desc/rs/choice/corr='Vietnamese'or ./p/desc/rs/supplied='Vietnamese'
+                        or ./p/desc/rs='Malaysian' or ./p/desc/rs/choice/corr='Malaysian'or ./p/desc/rs/supplied='Malaysian'
+                        ])"/> </td>
+                
+                
+                <td>
+                    <xsl:value-of select="count(./div2[./p/desc/rs='Afghan' or ./p/desc/rs/choice/corr='Afghan' or ./p/desc/rs/supplied='Afghan' 
+                        or ./p/desc/rs='Lebanese' or ./p/desc/rs/choice/corr='Lebanese'or ./p/desc/rs/supplied='Lebanese'
+                        or ./p/desc/rs='Middle Eastern' or ./p/desc/rs/choice/corr='Middle Eastern'or ./p/desc/rs/supplied='Middle Eastern' 
+                        or ./p/desc/rs='Iranian' or ./p/desc/rs/choice/corr='Iranian'or ./p/desc/rs/supplied='Iranian'
+                        ])"/> </td>
+                
+                <td>
+                    <xsl:value-of select="count(./div2[./p/desc/rs='American' or ./p/desc/rs/choice/corr='American' or ./p/desc/rs/supplied='American' 
+                        or ./p/desc/rs='Peruvian' or ./p/desc/rs/choice/corr='Peruvian'or ./p/desc/rs/supplied='Peruvian'
+                        or ./p/desc/rs='Mexican' or ./p/desc/rs/choice/corr='Mexican'or ./p/desc/rs/supplied='Mexican'
+                        or ./p/desc/rs='Moroccan' or ./p/desc/rs/choice/corr='Moroccan' or ./p/desc/rs/supplied='Moroccan'
+                        ])"/> </td>
+                
+                <td>
+                    <xsl:value-of select="count(./div2[./p/desc/rs='Moroccan' or ./p/desc/rs/choice/corr='Moroccan' or ./p/desc/rs/supplied='Moroccan'
+                        ])"/> </td>
+                
+                <td>
+                    <xsl:value-of select="count(./div2[./p/desc/rs='Fusion' or ./p/desc/rs/choice/corr='Fusion' or ./p/desc/rs/supplied='Fusion'
+                        ])"/> </td>
+            
+            </div>
+        </xsl:for-each></tr>
+    </xsl:template>
+    
+    
+    <!-- This template gives the name of each area. -->
+    <xsl:template match="front/div1/head">
+        <xsl:value-of select="."/>
+        <xsl:text>&#160;</xsl:text>
+    </xsl:template>
+    
+    <!-- This template writes the names of each restaurant. -->
+    <xsl:template match="head/name">
+        <xsl:text> &#160;&#160;</xsl:text>
+        <xsl:choose>
+            <xsl:when test="./choice">
+                <xsl:value-of select="choice/corr"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- This template writes the average restaurant price of each area. -->
+    <xsl:template match="body/div1/num">
+        <xsl:value-of select="."/>
+    </xsl:template>
+    
+    <!-- This template writes the most popular specialties for reference.-->
+    <xsl:template match="/TEI/text/body/div1/div2">
+        <xsl:for-each select="div3/p/desc/name">
+            <p><xsl:value-of select="."/>
+                    <span style="float:right"><xsl:value-of select="./@type"/></span></p>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- This template writes the details of each restaurant. -->
+    <xsl:template match="p/desc">
+        <xsl:text> &#160;&#160;</xsl:text>
+        <xsl:value-of select="num"/>
+        <xsl:text> &#160;&#160;</xsl:text>
+        
+        <span style="float:right">
+            <xsl:choose>
+                <xsl:when test="rs[@type='style']/choice">
+                    <xsl:value-of select="rs[@type='style']/choice/corr"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="rs[@type='style']"/>
+                </xsl:otherwise> 
+            </xsl:choose>
+            <xsl:text> &#160;&#160;</xsl:text>
+        </span>
+    </xsl:template>
+    
+</xsl:stylesheet>
+
