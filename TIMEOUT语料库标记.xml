@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xslForOfficers.xsl"?>
+<?xml-stylesheet type="text/xsl" href="xslForOwners.xsl"?>
+<!DOCTYPE TEI [ 
+    <!ELEMENT TEI (teiHeader,text+)>                  
+    <!ELEMENT teiHeader (fileDesc)>
+    <!ELEMENT fileDesc (titleStmt,publicationStmt,sourceDesc)>
+    <!ELEMENT titleStmt (title,author,respStmt)>
+    <!ELEMENT respStmt (resp,name)>   
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>    
+    <!ELEMENT resp (#PCDATA)>
+    <!ELEMENT name (#PCDATA|gloss|choice)*>
+    <!ELEMENT publicationStmt (p+)>
+    <!ELEMENT sourceDesc (p+)>
+    
+    <!ELEMENT text (front,body)>
+    <!ELEMENT front (div1)>
+    <!ELEMENT body (div1)>
+    <!ELEMENT div1 ((note,head,opener)?|div2|surplus|num)*>
+    <!ELEMENT note (#PCDATA|q|supplied)*>
+    <!ELEMENT head (#PCDATA|name)*>
+    <!ELEMENT opener (salute,byline,dateline)>
+    <!ELEMENT salute (#PCDATA)>
+    <!ELEMENT byline (#PCDATA|docAuthor)*>
+    <!ELEMENT docAuthor (#PCDATA|supplied)*>
+    <!ELEMENT dateline (#PCDATA|date)*>
+    <!ELEMENT date (#PCDATA)>
+    <!ELEMENT div2 (head,p*,div3*)>
+    <!ELEMENT p (#PCDATA|note|surplus|desc)*>
+    <!ELEMENT div3 (p+)>
+    <!ELEMENT surplus (#PCDATA|div2)*>
+    <!ELEMENT desc (#PCDATA|rs|addrName|num|gloss|name|choice)*>
+    <!ELEMENT rs (#PCDATA|supplied|choice)*>
+    <!ELEMENT choice (sic,corr)>
+    <!ELEMENT sic (#PCDATA)>
+    <!ELEMENT corr (#PCDATA)>
+    <!ELEMENT addrName (#PCDATA)>
+    <!ELEMENT num (#PCDATA|supplied)*>
+    <!ELEMENT gloss (#PCDATA|span|name|gloss)*>
+    <!ELEMENT span (#PCDATA)>
+    <!ELEMENT q (#PCDATA)>
+    <!ELEMENT supplied (#PCDATA)>
+    
+    <!ATTLIST TEI xmlns CDATA #REQUIRED
+                  xml:lang CDATA #REQUIRED>
+    <!ATTLIST div1 type CDATA #REQUIRED>
+    <!ATTLIST note place CDATA #IMPLIED>
+    <!ATTLIST head type CDATA #IMPLIED>
+    <!ATTLIST date when CDATA #REQUIRED>
+    <!ATTLIST name role CDATA #IMPLIED
+                   xml:id ID #IMPLIED
+                   ana CDATA #IMPLIED
+                   type CDATA #IMPLIED>
+                   
+    <!ATTLIST rs type CDATA #REQUIRED>
+    <!ATTLIST surplus reason CDATA #REQUIRED>
+    <!ATTLIST desc rend CDATA #REQUIRED>
+    <!ATTLIST num type CDATA #REQUIRED
+                  value CDATA #REQUIRED>
+    <!ATTLIST gloss type CDATA #REQUIRED
+                    target CDATA #REQUIRED>
+    <!ATTLIST q rend CDATA #REQUIRED>  
+    <!ATTLIST span style CDATA #REQUIRED> 
+]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Restaurant Recommendation</title>
+                <author>Time Out London Food &amp; Drink</author>
+                <respStmt>
+                    <resp>encoder</resp>
+                    <name>20053281</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Unpublished, this corpus is only used for academics.</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>all texts are collected from https://www.timeout.com/london; detailed URLs are provided in the note of each text.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    
+    <!-- [ 10 texts are included in this corpus, all gives a detailed recommendation list of restaurants in London ...] -->   
+
+    <!-- [ text 1 Chinatown ...] -->   
+    <text> 
+        <front>
+            <div1 type="abstract">
+                <note place="top">https://www.timeout.com/london/restaurants/where-to-eat-in-chinatown</note>
+                <head type="title">Chinatown</head>
+                <opener>
+                    <salute>Dine at the finest Chinese spots the London’s Chinatown has to offer (plus a few-non Chinese options, too)</salute>              
+                    <byline>By <docAuthor>Time Out London Food &amp; Drink</docAuthor></byline> 
+                    <dateline>Posted: <date when="2019-04-24">Wednesday April 24 2019</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        
+        <body>
+            <!-- [ body of text 1 ... ] -->           
+            <div1 type="main">
+                <num type='avgPrice' value="1.7"><supplied>￡-￡￡</supplied></num>
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="A1">BaoziInn Romilly Street</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Chinese</rs> <addrName>Soho</addrName> <num type="price" value="1">￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">It’s all about the buns at <gloss type="environment" target="#A1">this <span style="color:#11A2A7">basement Chinese street-food restaurant</span>, a little sister to the Newport Court BaoziInn round the corner</gloss>. The <name role="specialty" xml:id="A1.1" type="small plates">bao</name> as they should be: <gloss type="cuisine" target="#A1.1"><span style="color:#11A2A7">soft</span> and <span style="color:#11A2A7">fluffy</span> on the outside; <span style="color:#11A2A7">deliciously warm</span>, <span style="color:#11A2A7">sweet</span> and <span style="color:#11A2A7">sticky</span> on the inside</gloss>.<gloss type="tips" target="#A1">Take a date for <span style="color:#11A2A7">pre-theatre beers and bao</span>, and you’ll do very well here</gloss>.</desc></p>
+                        <p><note place="bottom">Venue says <q rend="italics">From the heart of Northern China to the heart of London; Our chefs are famed for the authenticity of their cooking</q>!</note></p>
+                        <p><surplus reason="invalid">Discover Sohos favourite Read more</surplus></p>
+                    </div3>                  
+                </div2>
+                
+                <div2>
+                    <head type="sub"><name role="restaurant" xml:id="A2">Café TPT</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Chinese</rs> <addrName>Chinatown</addrName> <num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>
+                    <div3>
+                        <p><desc rend="normal">Big menus are commonplace in Chinatown, but <gloss type="menu" target="#A2">such <span style="color:#11A2A7">a vast repertoire</span> seems impossible</gloss> from <gloss type="environment" target="#A2">a galley <span style="color:#11A2A7">the size of an origami boat</span></gloss>. Still, <gloss type="menu" target="#A2">TPT manages to <span style="color:#11A2A7">deliver its pan-Chinese bonanza with commendable aplomb</span></gloss>. Best bets are <gloss type="cuisine" target="#A2.1">Cantonese staples such as <span style="color:#11A2A7">succulent</span></gloss> <name role="specialty" xml:id="A2.1" type="rice noodles">roast duck on rice</name>, although we crave the <gloss type="cuisine" target="#A2.2">Hong Kong-style</gloss> ‘<name role="specialty" xml:id="A2.2" type="dishes">Tai pai tong hawker dishes</name>’ too.</desc></p>                   
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="sub"><name role="restaurant" xml:id="A3">Canton</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Chinese</rs> <addrName>Chinatown</addrName> <num type="price" value="1"><supplied>￡</supplied></num></desc></p>
+                    <div3>
+                        <p><desc rend="normal">It may be <gloss type="environment" target="#A3">getting <span style="color:#11A2A7">ragged round the edges</span></gloss>, but this <gloss type="environment" target="#A3"><span style="color:#11A2A7">plainly furnished</span> Chinatown veteran</gloss> is once again on song – especially when it comes to its famed <name role="specialty" xml:id="A3.1" type="rice noodles">one-plate rice and noodle dishes</name> <gloss type="cuisine" target="#A3.1">piled high with <span style="color:#11A2A7">juicy meats</span> (roast duck, barbecued pork, soy chicken etc)</gloss>. <gloss type="service" target="#A3">Service is <span style="color:#11A2A7">noticeably friendly</span> and accommodating by Chinatown standards</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>                    
+                </div2>
+                
+                <div2>
+                    <head type="sub"><name role="restaurant" xml:id="A4">C&amp;R Café</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Malaysian</rs> <addrName>Chinatown</addrName> <num type="price" value="1">￡</num></desc></p>
+                    <div3>
+                        <p><desc rend="normal">C&amp;R slipped quietly into a Chinatown alley more than two decades ago, bringing with it <gloss type="menu" target="#A4">a <span style="color:#11A2A7">passion</span> for <name role="specialty" xml:id="A4.1" type="dishes">Malaysian laksa</name></gloss>: <gloss type="cuisine" target="#A4.1"><span style="color:#11A2A7">giant</span> bowls of <span style="color:#11A2A7">spicy</span> coconutty broth packed with <span style="color:#11A2A7">juicy prawns</span>,<span style="color:#11A2A7">thin rice vermicelli</span>, <span style="color:#11A2A7">puffy fish balls</span>, the works</gloss>. It also serves up <gloss type="cuisine" target="#A4.2"><span style="color:#11A2A7">umami-rich</span></gloss> plates of <name role="specialty" xml:id="A4.2" type="rice noodles">char kway teow noodles</name>, piled-high <name role="specialty" xml:id="A4.3" type="rice noodles">rice-based nasi goreng</name>, <name role="specialty" xml:id="A4.4" type="baked">buttery roti canai bread</name> and the <gloss type="cuisine" target="#A4.5"><span style="color:#11A2A7">celebrated</span></gloss> <name role="specialty" xml:id="A4.5" type="dishes">beef rendang</name>. <gloss type="service" target="#A4">C&amp;R's vibe is <span style="color:#11A2A7">functional but contemporary</span>, while staff are <span style="color:#11A2A7">friendly but terrifyingly efficient</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>                    
+                </div2>
+                
+                <div2>
+                    <head type="sub"><name role="restaurant" xml:id="A5">Dumplings’ Legend</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style"><supplied>Chinese</supplied></rs> <addrName>Chinatown</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>
+                    <div3>
+                        <p><desc rend="normal">Never tried <name role="specialty" xml:id="A5.1" type="small plates">xiao long bau</name>? Sometimes called <gloss type="cuisine" target="#A5.1">‘soup dumplings’, these Shanghai <span style="color:#11A2A7">beauties</span> are steamed parcels containing both filling and broth ­­– so be sure to <span style="color:#11A2A7">pop</span> them in your mouth in one go</gloss>. The classic pork version is our favourite, while dim sum fans will also like DL’s moreish <name role="specialty" xml:id="A5.2" type="small plates">fried turnip cake</name> and quivering <name role="specialty" xml:id="A5.3" type="small plates">cheung fun</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                    
+                </div2>
+                
+                <div2>
+                    <head type="sub"><name role="restaurant" xml:id="A6">Gerrard’s Corner</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Chinese</rs><addrName>Chinatown</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>
+                    <div3>
+                        <p><desc rend="normal"><gloss type="menu" target="#A6">Dumplings are the stars of the show</gloss> at <gloss type="environment" target="#A6">this <span style="color:#11A2A7">unpretentious</span> joint on the corner of Gerrard Street</gloss>, <name role="specialty" xml:id="A6.1" type="small plates">prawn and chive dumplings</name> are <gloss type="cuisine" target="#A6.1"><span style="color:#11A2A7">plump</span> and <span style="color:#11A2A7">sweet</span>, while their <span style="color:#11A2A7">rich crabmeat</span> cousins come with a scallop balanced on top</gloss>. If you like your <gloss type="menu" target="#A6">dim sum with a side of <span style="color:#11A2A7">nostalgia</span></gloss>, adorably retro Gerrard’s is for you.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>                   
+                </div2>
+                
+                <div2>
+                    <head type="sub"><name role="restaurant" xml:id="A7">Imperial China</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Chinese</rs> <addrName>Chinatown</addrName> <num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#A7">A <span style="color:#11A2A7">small wooden bridge</span> spanning an <span style="color:#11A2A7">ornamental fish pond</span>, <span style="color:#11A2A7">warm wood panelling</span>, <span style="color:#11A2A7">kind lighting</span> and a second floor offering <span style="color:#11A2A7">a view of the dining room below</span> set this Cantonese standby apart from its Chinatown rivals</gloss>. <gloss type="menu" target="#A7">The food is <span style="color:#11A2A7">reliable</span>, <span style="color:#11A2A7">authentic</span> and of <span style="color:#11A2A7">decent quality</span> – even if <span style="color:#11A2A7">portions can seem rather miserly</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>                   
+                </div2>
+                
+                <div2>
+                    <head type="sub"><name role="restaurant" xml:id="A8">Jen Café</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Chinese</rs> <addrName>Chinatown</addrName> <num type="price" value="1">￡</num></desc></p>
+                    <div3>
+                        <p><desc rend="normal">Although this <gloss type="environment" target="#A8"><span style="color:#11A2A7">green-painted</span> café </gloss><gloss type="menu" target="#A8">serves everything</gloss> from <name role="specialty" xml:id="A8.2" type="baked">buttered toast</name> and <name role="specialty" xml:id="A8.3" type="dishes">barbecued pork</name> to <name role="specialty" xml:id="A8.4" type="beverages">bubble teas</name>, it’s the hand-wrapped <name role="specialty" xml:id="A8.1" type="small plates">dumplings</name> that keep us coming back. <gloss type="cuisine" target="#A8.1">The <span style="color:#11A2A7">cheapest</span> are the jiao zi (aka ‘Beijing dumplings’) – eight morsels filled to <span style="color:#11A2A7">bursting</span> with <span style="color:#11A2A7">pork or vegetables</span> for a <span style="color:#11A2A7">fiver</span></gloss>. You guessed it, they’re one of our go-to Chinatown snacks.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>                    
+                </div2>
+                
+                <div2>
+                    <head type="sub"><name role="restaurant" xml:id="A9">Le Hanoi</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Chinese</rs> <addrName>Chinatown</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#A9"><span style="color:#11A2A7">Cheap</span> and <span style="color:#11A2A7">cheerful</span></gloss> is an increasingly rare commodity in Chinatown, but this casual Vietnamese joint could change all that. <gloss type="menu" target="#A9">We’ll forgive one rather bland pho, because some <span style="color:#11A2A7">positively classy food</span> is on offer here</gloss> – from <gloss type="cuisine" target="#A9.1"><span style="color:#11A2A7">juicy</span></gloss> <name role="specialty" xml:id="A9.1" type="small plates">prawn summer rolls</name> and <name role="specialty" xml:id="A9.2" type="small plates">pork dumplings wrapped in betel leaves</name> to an <gloss type="cuisine" target="#A9.3">utterly <span style="color:#11A2A7">zesty</span></gloss> <name role="specialty" xml:id="A9.3" type="dishes">mango salad with crispy shrimps</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3> 
+                </div2>
+            </div1>
+        </body> 
+    </text>
+    
+    
+    
+    <!-- [ text 2 kings-cross...] -->
+    <text> 
+        <front>
+            <div1 type="abstract">
+                <note place="top"><supplied>https://www.timeout.com/london/restaurants/kings-cross-restaurants</supplied></note>
+                <head type="main">King’s Cross</head>
+                <opener>
+                    <salute>Discover the top restaurants, cafés and gastropubs around King's Cross</salute>              
+                    <byline><docAuthor><supplied>Time Out London Food &amp; Drink</supplied></docAuthor></byline> <dateline>Posted: <date when="2019-05-21">Tuesday May 21 2019</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        
+        <body> 
+            <!-- [ body of text 2 ... ] -->
+            <div1 type="main">   
+                <num type='avgPrice' value="2.2"><supplied>￡￡</supplied></num>
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="B1">Aux Pains de Papy</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Bakeries</corr></choice></rs> <rs type="style">French</rs> <addrName>Gray’s Inn Road</addrName> <num type="price" value="1"><supplied>￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">A trip to Paris on the Eurostar might be the best way to indulge in an ooh-la-la French café experience, but what’s the next best thing A trip to King’s Cross and <gloss type="environment" target="#B1">a visit to this <span style="color:#11A2A7">endearing little café</span> – a mere boule’s-throw from the Eurostar terminal</gloss>. Aux Pains de Papy already has <gloss type="tips" target="#B1">a loyal following of office workers</gloss> seeking their <name role="specialty" xml:id="B1.1" type="baked">daily bread</name> and <gloss type="cuisine" target="#B1.2"><span style="color:#11A2A7">satisfying</span> lunchtime</gloss> <name role="specialty" xml:id="B1.2" type="fast food">sandwiches</name>, but it’s also worth seeking out for <name role="specialty" xml:id="B1.3" type="desserts">patisserie</name> and <name role="specialty" xml:id="B1.4" type="baked">boulangerie</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="B2">Barrafina King’s Cross</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Spanish</rs> <addrName>King’s Cross</addrName> <num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="menu" target="#B2">Spanish mini chain Barrafina has been <span style="color:#11A2A7">breaking foodie hearts</span></gloss> ever since it first arrived on Frith Street way back in 2007. This branch, <gloss type="environment" target="#B2">on the upper level of Coal Drops Yard, comes with <span style="color:#11A2A7">outdoor seating</span> to soak up the sun, and in a Barrafina first, there are even <span style="color:#11A2A7">two tables for four inside</span></gloss>. Don’t miss the <gloss type="cuisine" target="#B2.1"><span style="color:#11A2A7">eggy</span>, <span style="color:#11A2A7">gooey</span></gloss> <name role="specialty" xml:id="B2.1" type="fast food">tortilla</name> and the classic <name role="specialty" xml:id="B2.2" type="small plates">croquetas</name> <gloss type="cuisine" target="#B2.2">filled with <span style="color:#11A2A7">rich</span>, Spanish-style blood pudding</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="B3">Caravan King's Cross</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Coffee&amp;tea</corr></choice></rs> <rs type="style"><choice><sic>Cafés</sic><corr>Fusion</corr></choice></rs> <addrName>King’s Cross</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Compared to some of its other branches, the King’s Cross offshoot of <gloss type="environment" target="#B3">Caravan is a <span style="color:#11A2A7">grandiose urbane proposition</span> – all <span style="color:#11A2A7">concrete floors</span>, <span style="color:#11A2A7">girders and exposed pipework</span>. The <span style="color:#11A2A7">industrial-themed interior</span> isn’t built for intimacy, but it still has a <span style="color:#11A2A7">laid-back buzz</span> and great <span style="color:#11A2A7">people-watching opportunities</span></gloss>. As expected, <gloss type="service" target="#B3">this outlet boasts <span style="color:#11A2A7">welcoming, efficient staff</span></gloss> and <gloss type="menu" target="#B3">a menu of what they call ‘<span style="color:#11A2A7">well-travelled food</span>’ – ie <span style="color:#11A2A7">plates of global fusion</span></gloss> ranging from <name role="specialty" xml:id="B3.1" type="dishes">lamb ribs with chermoula</name> to <name role="specialty" xml:id="B3.2" type="dishes">Burmese chicken salad</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="B4">Casa Pastor</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Mexican</rs> <addrName>King’s Cross</addrName> <num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Eat as many <name role="specialty" ana="#B4.1" type="fast food">tacos</name> at you can at Casa Pastor, <gloss type="menu" target="#B4">a <span style="color:#11A2A7">massive Mexican restaurant at Coal Drops Yard</span></gloss> from the team behind much-loved El Pastor in Borough Market. The <gloss type="environment" target="#B4.2"><span style="color:#11A2A7">addictive</span>, <span style="color:#11A2A7">slightly chewy</span></gloss> <name role="specialty" xml:id="B4.2" type="fast food">corn tortillas</name> are <gloss type="cuisine" target="#B4.2">made <span style="color:#11A2A7">in-house</span>: order a bunch of them, topped with the likes of <span style="color:#11A2A7">juicy</span> pork shoulder and pineapple, and lightly-battered sea bass</gloss> then feast on some <gloss type="cuisine" target="#B4.3"><span style="color:#11A2A7">crispy</span>, <span style="color:#11A2A7">sugary</span></gloss> <name role="specialty" xml:id="B4.3" type="desserts">churros</name> with <gloss type="cuisine" target="#B4.3">warm chocolate sauce</gloss> for pud.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="B5">Coal Office</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Middle Eastern</rs> <addrName>King’s Cross</addrName> <num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Fan of The Palomar and The Barbary? Then you’ll love Coal Office, <gloss type="environment" target="#B5">a swish Tom Dixon-designed spot at Coal Drops Yard</gloss> with some of <gloss type="menu" target="#B5"><span style="color:#11A2A7">the city’s best Middle Eastern food</span></gloss>. <gloss type="menu" target="#B5"><span style="color:#11A2A7">Everything is bold and memorable</span></gloss> here: expect delights like <name role="specialty" xml:id="B5.1" type="dishes">fennel with a yoghurt-harissa dressing</name> and <gloss type="cuisine" target="#B5.2">seriously good</gloss> puds; <name role="specialty" xml:id="B5.2" type="desserts">rice pudding</name> with <gloss type="cuisine" target="#B5.2">flavours of <span style="color:#11A2A7">mango</span> and <span style="color:#11A2A7">kaffir lime</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>            
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="B6">Dishoom</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">Indian</rs> <addrName>King’s Cross</addrName> <num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#B6"><span style="color:#11A2A7">Whirling ceiling fans</span>, <span style="color:#11A2A7">vintage Indian magazine ads</span> and other <span style="color:#11A2A7">retro wheezes</span> set the scene for some <span style="color:#11A2A7">post-colonial romping</span> at this swish London take on <span style="color:#11A2A7">an old ‘Irani café’</span>. It’s all very <span style="color:#11A2A7">design-conscious and slick</span></gloss>, but there’s no arguing with the food – <gloss type="menu" target="#B6">a <span style="color:#11A2A7">spicy all-day repertoire</span></gloss> running from <name role="specialty" xml:id="B6.1" type="small plates">bhel pooris</name> to <name role="specialty" xml:id="B6.2" type="rice noodles">biryanis</name>. <gloss type="tips" target="#B6">Expect <span style="color:#11A2A7">crazy queues in the evenings</span> (check booking restrictions), though the <span style="color:#11A2A7">basement bar</span> is a godsend</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>              
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="B7">Granger &amp; Co</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Brunch</supplied></rs> <rs type="style">Fusion</rs> <addrName>King’s Cross</addrName> <num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">The King’s Cross outpost of Aussie Bill Granger's <gloss type="menu" target="#B7"><span style="color:#11A2A7">all-day sunny-side-up eatery references</span> just about every <span style="color:#11A2A7">on-trend fad and fashion on the current foodie agenda</span></gloss>: small plates, grains, <name role="specialty" xml:id="B7.1" type="dishes">Korean riffs</name>, <name role="specialty" xml:id="B7.2" type="rice noodles">Hawaiian-style poké bowls</name>, <name role="specialty" xml:id="B7.3" type="dishes">Thai curries</name> and all sorts of multicultural stuff besides. Granger is also known for giving <gloss type="menu" target="#B7">good brunch</gloss>, and this spot has <gloss type="environment" target="#B7">the added bonus of <span style="color:#11A2A7">in-demand alfresco tables on a quiet piazza</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>                     
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="B8">Hicce</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style"><choice><sic>Contemporary Global</sic><corr>Fusion</corr></choice></rs> <addrName>King’s Cross</addrName> <num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Another small plates spot at Coal Drops Yard, Hicce is right above a shop called Wolf &amp; Badger. That might not seem like the nicest place to dine, but this <gloss type="environment" target="#B8"><span style="color:#11A2A7">slick</span>, <span style="color:#11A2A7">industrial-style space</span> from Murano-trained chef Pip Lacey has <span style="color:#11A2A7">oodles of atmosphere</span></gloss> and <gloss type="menu" target="#B8">lots of <span style="color:#11A2A7">vibrant</span>, <span style="color:#11A2A7">snacky</span> menu we love</gloss>. Expect things like <name role="specialty" xml:id="B8.1" type="streetfood">goat’s-cheese-stuffed peppers</name> and <name role="specialty" xml:id="B8.2" type="streetfood">lamb adana kebabs</name>, and don’t skip the <name role="specialty" xml:id="B8.3" type="bakery">bread</name>. <gloss type="cuisine" target="#B8.4">The <span style="color:#11A2A7">delicately yeasty</span> <name role="specialty" xml:id="B8.4" type="beverages">beer</name> version is to die for</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>          
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="B9">House of Morocco</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Coffee&amp;tea</corr></choice><supplied> Vegans</supplied></rs> <rs type="style"><choice><sic>Cafés</sic><corr>Moroccan</corr></choice></rs> <addrName>Caledonian Road</addrName> <num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">A cute spot on Caledonian Road, House of Morocco is <gloss type="environment" target="#B9">a community-style café</gloss> with <gloss type="menu" target="#B9">a <span style="color:#11A2A7">healthy</span> menu packed with <span style="color:#11A2A7">Middle Eastern-type delights</span></gloss>. We love the fresh <name role="specialty" xml:id="B9.1" type="beverages">smoothies</name> <gloss type="cuisine" target="#B9.1">packed with <span style="color:#11A2A7">banana and avocado</span></gloss>, and the <gloss type="menu" target="#B9"><span style="color:#11A2A7">cheap</span> lunch options</gloss>, like <name role="specialty" xml:id="B9.2" type="fast food">falafel wraps</name> and <name role="specialty" xml:id="B9.3" type="fast food">harissa halloumi quesadillas</name> for under a tenner. <gloss type="menu" target="#B9">Loads of <span style="color:#11A2A7">veggie</span> and <span style="color:#11A2A7">vegan</span> options</gloss>, too.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>    
+            </div1>
+        </body> 
+    </text>
+   
+    
+    <!-- [ text 3 holborn  ...] -->
+    <text>
+        <front>
+            <div1 type="abstract">
+                <note place="top"><supplied>https://www.timeout.com/london/restaurants/holborn-restaurants</supplied></note>
+                <head type="main">Holborn</head>
+                <opener>
+                    <salute>From a light bite to a slap-up dinner, here are the best places to eat and drink near Holborn</salute>              
+                    <byline><docAuthor><supplied>Time Out London Food &amp; Drink</supplied></docAuthor></byline> <dateline>Posted: <date when="2019-06-05">Wednesday June 5 2019</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        <body> 
+            <!-- [ body of text 3 ... ] -->
+            <div1 type="main">
+                <num type='avgPrice' value="2.1"><supplied>￡￡</supplied></num>
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="C1">Abeno</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Japanese</rs> <addrName>Bloomsbury</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                    <p><desc rend="normal">If you’re heading from Holborn towards the British Museum, take time to visit this <gloss type="menu" target="#C1"><span style="color:#11A2A7">lively</span> Japanese eatery</gloss> specialising in <name role="specialty" xml:id="C1.1" type="fast food">okonomiyaki</name> – <gloss type="cuisine" target="#C1.1"><span style="color:#11A2A7">savoury</span> omelettes/pancakes that are whipped up in front of your very eyes on a special hotplate fitted into each table</gloss>. All you have to do is pick your fillings and garnishes. Alternatively, dip into the selection of <name role="specialty" xml:id="C1.2" type="dishes">teppanyaki grills</name>, <name role="specialty" xml:id="C1.3" type="rice noodles">soba noodles</name>, <name role="specialty" xml:id="C1.4" type="small plates">gyoza</name> and the like, finishing off with a <name role="specialty" xml:id="C1.5" type="desserts">mitsumame</name> <gloss type="cuisine" target="#C1.5">fruit salad</gloss> and <gloss type="cuisine" target="#C1.6"><span style="color:#11A2A7">sweet</span></gloss> <name role="specialty" xml:id="C1.6" type="desserts">red beans</name>.</desc></p>
+                    <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="C2">Asadal</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Korean</rs> <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs> <addrName>Holborn</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#C2"><span style="color:#11A2A7">Discreetly</span> hidden next to Holborn station, this <span style="color:#11A2A7">bustling</span> below-stairs restaurant</gloss> was <gloss type="menu" target="#C2">spreading the <span style="color:#11A2A7">Korean gospel</span> long before kimchi, bulgogi and bibimbap became buzzwords in London</gloss>. <gloss type="menu" target="#C2">Tabletop hot plates do the business on <span style="color:#11A2A7">everything from beef to deftly marinated pork belly</span></gloss>, while <gloss type="menu" target="#C2">the full menu includes most of the usual suspects</gloss> – think bowls of <gloss type="cuisine" target="#C2.1">spicy</gloss> <name role="specialty" xml:id="C2.1" type="soups">yuk kae jang soup</name>, <gloss type="cuisine" target="#C2.2">savoury</gloss> <name role="specialty" xml:id="C2.2" type="small plates">pa jeon (seafood pancakes</name>) and <name role="specialty" xml:id="C2.3" type="dishes">yuk hwae</name> (<gloss type="cuisine" target="#C2.3">Korea’s answer to steak tartare with soy, pear and egg yolk</gloss>).</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+              
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="C3">Banh Mi Bay</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Vietnamese</rs> <addrName>Holborn</addrName> <num type="price" value="1"><supplied>￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">It’s a bonus to find proper Vietnamese cooking in Holborn, so load up on <name role="specialty" xml:id="C3.1" type="soups">soups</name>, <name role="specialty" xml:id="C3.2" type="small plates">summer rolls</name>, <name role="specialty" xml:id="C3.3" type="small plates">bánh xeo</name> (<gloss type="cuisine" target="#C3.3">pancakes</gloss>) and other classics at this <gloss type="environment" target="#C3">handily placed venue</gloss>. At lunchtime, local workers pop in for takeaway <name role="specialty" xml:id="C3.4" type="fast food">bánh mì</name> (<gloss type="cuisine" target="#C3.4"><span style="color:#11A2A7">crisp</span> baguettes stuffed with pickled carrot and daikon, cucumber and a filling of your choice</gloss>), while the various versions of <name role="specialty" xml:id="C3.5" type="rice noodles">pho</name> are <gloss type="cuisine" target="#C3.5">perfectly decent renditions</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="C4">Barrafina Drury Lane</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Spanish</rs> <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs><addrName>Covent Garden</addrName> <num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#C4">The queues are endless at this branch of <span style="color:#11A2A7">no-bookings</span> Barrafina in the hinterland between Holborn and Covent Garden</gloss>, but <gloss type="environment" target="#C4">your patience is <span style="color:#11A2A7">amply rewarded</span> once you claim your stool at the L-shaped marble counter</gloss>. <gloss type="menu" target="#C4"><span style="color:#11A2A7">Flawless cooking</span> is a given, and the hero kitchen doesn’t disappoint when it comes to delivering <span style="color:#11A2A7">starry scene-stealing tapas</span></gloss> – <name role="specialty" xml:id="C4.1" type="small plates">seafood empanadas</name>, <name role="specialty" xml:id="C4.2" type="dishes">pork belly with chickpeas</name>, <name role="specialty" xml:id="C4.3" type="veggies">chargrilled artichokes romesco</name> and so on. Your money might go further in Spain, but who cares when the quality’s this good.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="C5">The Black Penny</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Coffee&amp;tea</corr></choice><supplied> Brunch</supplied></rs> <rs type="style"><choice><sic>Coffeeshops</sic><corr>French</corr></choice></rs> <addrName>Covent Garden</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="menu" target="#C5">A terrific breakfast, brunch and lunch spot</gloss> <gloss type="environment" target="#C5">midway between Holborn and Covent Garden stations, this <span style="color:#11A2A7">cheery</span> café/takeaway is right on the money</gloss>. Early birds come here for <name role="specialty" xml:id="C5.1" type="baked">brioche French toast</name>, <name role="specialty" xml:id="C5.2" type="full courses">bubble ’n’ squeak</name> and <name role="specialty" xml:id="C5.3" type="dishes">confit duck hash</name>, while others take time out over sprightly <name role="specialty" xml:id="C5.4" type="veggies">salads</name>, <name role="specialty" xml:id="C5.5" type="soups">soups</name>, <name role="specialty" xml:id="C5.6" type="dishes">stews</name> and <name role="specialty" xml:id="C5.7" type="dishes">quiches</name>. With <gloss type="cuisine" target="#C5.8"><span style="color:#11A2A7">enticing</span> <span style="color:#11A2A7">sweet</span></gloss> <name role="specialty" xml:id="C5.8" type="desserts">treats</name>, <gloss type="cuisine" target="#C5.9">invigorating</gloss> <name role="specialty" xml:id="C5.9" type="beverages">coffee</name>, <gloss type="environment" target="#C5">piles of <span style="color:#11A2A7">arty</span> magazines and a <span style="color:#11A2A7">super-soulful</span> soundtrack added to the mix, it’s tempting to spend all day here</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="C6">Bungatini</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">Italian</rs> <addrName>Covent Gardern</addrName> <num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">If you’re tired of the Berlusconi-themed cabaret shenanigans in Bunga Bunga’s basement bar, head upstairs to Bungatini – <gloss type="environment" target="#C6">a straight-down-the-line, no-nonsense pizzeria with <span style="color:#11A2A7">crowd-pleasing</span> credentials on Drury Lane. The decor comes with a <span style="color:#11A2A7">contemporary edge</span> (note the <span style="color:#11A2A7">USB ports at every table</span>)</gloss>, but <gloss type="menu" target="#C6">the menu goes for <span style="color:#11A2A7">rustic familiarity</span> in a big way</gloss> – <name role="specialty" xml:id="C6.1" type="fast food">pizzas</name> with <gloss type="cuisine" target="#C6.1"><span style="color:#11A2A7">artisan</span> toppings</gloss>, bookended by <gloss type="cuisine" target="#C6.2"><span style="color:#11A2A7">antipasti</span> and <span style="color:#11A2A7">decadent</span> <span style="color:#11A2A7">homemade</span></gloss> <name role="specialty" xml:id="C6.2" type="desserts">gelati</name>. You can sip <name role="specialty" xml:id="C6.3" type="beverages">cocktails</name>, too, without having to endure BB’s excesses.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>    
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="C7">Café Murano Covent Garden</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice><supplied> Coffee&amp;tea</supplied></rs> <rs type="style">Italian</rs> <addrName>Covent Gardern</addrName> <num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#C7">A few minutes’ stroll from Holborn station, in Covent Garden’s ‘<span style="color:#11A2A7">Opera Quarter</span>’, this is queen bee Angela Hartnett in <span style="color:#11A2A7">casual</span> mode</gloss>, offering <gloss type="menu" target="#C7"><span style="color:#11A2A7">laid-back café-luxe</span> and a menu of <span style="color:#11A2A7">hearty Italian flavours</span>, <span style="color:#11A2A7">peasant classics</span> and <span style="color:#11A2A7">intricate cicchetti plates</span></gloss>. You can opt for a helping of <name role="specialty" xml:id="C7.1" type="rice noodles">pasta</name> (<gloss type="cuisine" target="#C7.1">tortelli with <span style="color:#11A2A7">lemon</span>, ricotta and marjoram</gloss>) or go the whole hog with some <name role="specialty" xml:id="C7.2" type="dishes">antipasti</name> and <name role="specialty" xml:id="C7.3" type="desserts">dolci</name> too. Start things off with a CM <name role="specialty" xml:id="C7.4" type="beverages">spritz</name>, before settling into the gorgeous <name role="specialty" xml:id="C7.5" type="beverages">reds</name> <gloss type="cuisine" target="#C7.5">from small Italian producers</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="C8">Chang's Noodle</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Chinese</rs> <addrName>Bloomsbury</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">The <name role="specialty" xml:id="C8.1" type="rice noodles">noodles</name> served at this <gloss type="environment" target="#C8">functional drop-in between Holborn and Bloomsbury</gloss> are of the <gloss type="cuisine" target="#C8.1">Chinese <span style="color:#11A2A7">hand-pulled</span> variety – stretched, folded, then stretched some more, before being piled up into big bundles or doused in <span style="color:#11A2A7">sumptuous</span> soup</gloss>. Chang’s on-trend <name role="specialty" xml:id="C8.2" type="desserts">soup dumplings</name> are also <gloss type="cuisine" target="#C8.2"><span style="color:#11A2A7">fragrant</span> and <span style="color:#11A2A7">perfectly chewy</span></gloss>, while Sichuan classics such as <name role="specialty" xml:id="C8.3" type="dishes">mapo tofu</name> or <name role="specialty" xml:id="C8.4" type="dishes">pig’s ears in chill oil</name> will <gloss type="cuisine" target="#C8.4"><span style="color:#11A2A7">blow your head off</span> – even if you’re used to living on the <span style="color:#11A2A7">spicy</span> edge</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="C9">Chicken Shop</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style"><supplied>American</supplied></rs> <rs type="ingredient">Chicken</rs> <addrName>Holborn</addrName> <num type="price" value="1">￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#C9">In the basement of Soho House’s Hoxton hotel, this <span style="color:#11A2A7">laid-back</span> chicken joint promises <span style="color:#11A2A7">good times</span>, <span style="color:#11A2A7">dim lights</span> and <span style="color:#11A2A7">pulsating music</span></gloss>. A wood-fired spit gets the free-range <name role="specialty" xml:id="C9.1" type="dishes">chooks</name> <gloss type="cuisine" target="#C9.1">looking <span style="color:#11A2A7">nice</span> and <span style="color:#11A2A7">blackened</span> by the time they reach your table</gloss> – all you need is a side order of <name role="specialty" xml:id="C9.2" type="small plates">slaw</name> and <name role="specialty" xml:id="C9.3" type="fast food">fries</name>. The menu also features <name role="specialty" xml:id="C9.4" type="dishes">buttermilk-fried ‘dirty birds’</name> <gloss type="cuisine" target="#C9.4">with chipotle mayo</gloss>, as well as various naughty riffs on the ‘<name role="specialty" xml:id="C9.5" type="fast food">dirty burger</name>’ theme – <gloss type="menu" target="#C9">perfect for an <span style="color:#11A2A7">all-out meat-fest</span> in the Holborn ’hood</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p> 
+                    </div3>
+                </div2>
+            </div1>      
+        </body> 
+    </text>
+    
+    
+    
+    <!-- [ text 4 covent-garden  ...] -->
+    <text>
+        <front>
+            <div1 type="abstract">
+                <note place="top"><supplied>https://www.timeout.com/london/restaurants/covent-garden-restaurants</supplied></note>
+                <head type="main">Covent Garden</head>
+                <opener>
+                    <salute>Looking for a bite in central London? Browse our pick of the best Covent Garden restaurants for a meal a cut above the rest</salute>              
+                    <byline><docAuthor><supplied>Time Out London Food &amp; Drink</supplied></docAuthor></byline> <dateline>Posted: <date when="2018-12-13">Thursday December 13 2018</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        
+        <body> 
+            <!-- [ body of text 4 ... ] -->
+            <div1 type="main">
+                <num type='avgPrice' value="2.1"><supplied>￡￡</supplied></num>
+                <surplus reason="duplicated">
+                <div2>
+                    <head type="subtitle"><name role="restaurant" ana="#C7">Café Murano Covent Garden</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice><supplied> Coffee&amp;tea</supplied></rs> <rs type="style">Italian</rs> <addrName>Covent Gardern</addrName> <num type="price" value="3">￡￡￡</num></desc></p>                     
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#C7">The unbreakable Angela Hartnett is known for her don’t-sweat-it demeanour – consequently, her high-end restaurants offer a more <span style="color:#11A2A7">relaxed</span>, <span style="color:#11A2A7">intimate</span> style of fine dining</gloss>. <gloss type="environment" target="#C7">This Covent Garden offshoot of her Murano brand is the most <span style="color:#11A2A7">laid-back</span> yet. We’re not talking ‘rock-up-in-your-flip-flops’ relaxed, more ‘<span style="color:#11A2A7">let’s-splash-out-on-a-posh-Italian-meal-without-feeling-talked-down-to</span>’</gloss>. So <gloss type="tips" target="#C7">dress up, then wallow in the no-gimmicks luxury</gloss> that is <name role="specialty" xml:id="C7.6" type="full courses">truffle arancini</name>, <name role="specialty" xml:id="D7.7" type="rice noodles">game lasagne</name> and <name role="specialty" xml:id="D7.8" type="desserts">caramel panna cotta</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                </surplus>
+
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="D1">Chick 'n' Sours</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Quick bites</corr></choice></rs> <rs type="style"><supplied>American</supplied></rs> <rs type="ingredient">Chicken</rs> <addrName>Seven Dials</addrName> <num type="price" value="1">￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Even if you’ve scarfed more battered birds than you can shake a drumstick at since <name role="specialty" xml:id="D2.1" type="dishes">fried chicken</name> took over London, <gloss type="tips" target="#D2">we urge you to return to the frontline for pop-up veteran turned <span style="color:#11A2A7">hats-off</span> restaurateur Carl Clarke’s Chick ‘n’ Sours</gloss>. Here, <gloss type="cuisine" target="#D2.1"><span style="color:#11A2A7">the meat is double-fried</span>, <span style="color:#11A2A7">Korean style</span>, for <span style="color:#11A2A7">super crunchy batter</span>; <span style="color:#11A2A7">Asian-style sauces</span> add the <span style="color:#11A2A7">perfect amount of zing and fire</span></gloss>. <gloss type="environment" target="#D2">The soundtrack is banging</gloss>, <gloss type="cuisine" target="#D2.1">the <span style="color:#11A2A7">sours</span> are a slam-dunk</gloss> – it’s as much fun as you can have at dinner.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="D2">Cinnamon Bazaar</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Indian</rs> <addrName>Covent Garden</addrName> <num type="price" value="1">￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Forget down-and-dirty souks, <gloss type="environment" target="#D3">this is a pimped-out <span style="color:#11A2A7">bazaar</span> for Covent Garden’s <span style="color:#11A2A7">business crowd</span>, complete with <span style="color:#11A2A7">gold walls</span> and <span style="color:#11A2A7">pristine silk awnings</span></gloss>. An offshoot of Westminster’s auspicious Cinnamon Club, it deals in <gloss type="menu" target="#D3"><span style="color:#11A2A7">imaginative fusions</span> of East and West</gloss>, with top honours going to the <name role="specialty" xml:id="D3.1" type="dishes">lamb rogan josh shepherd’s pie</name> – <gloss type="environment" target="#D3">a <span style="color:#11A2A7">life-affirming</span> mix of <span style="color:#11A2A7">old-school British comfort</span> and <span style="color:#11A2A7">spicy Indian warmth</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p> 
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="D3">Dishoom</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Brunch</supplied></rs> <rs type="style">Indian</rs> <addrName>Covent Garden</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Ever since the original Covent Garden branch of this chain of <gloss type="environment" target="#D4"><span style="color:#11A2A7">Bombay-style</span> Irani cafés jazz-handed</gloss> onto the scene, subsequent Dishooms have been <gloss type="menu" target="#D4">swiftly <span style="color:#11A2A7">incorporated into Londoners</span>’ little black books. That’s because this <span style="color:#11A2A7">slick operation</span> knows how to imbue everything it does with <span style="color:#11A2A7">tongue-in-cheek fun</span></gloss>. Expect <name role="specialty" xml:id="D4.1" type="fast food">bacon in a starring ‘roll</name>’ (tee hee) at breakfast, <gloss type="cuisine" target="#D4.2">snacky</gloss> <name role="specialty" xml:id="D4.2" type="small plates">small plates</name> with cheeky menu descriptions, <gloss type="cuisine" target="#D4.3">ruby</gloss> <name role="specialty" xml:id="D4.3" type="dishes">murrays</name> that have never met a korma, and ‘<name role="specialty" xml:id="D4.4" type="beverages">pudding drinks</name>’ such as <gloss type="cuisine" target="#D4.4">a <span style="color:#11A2A7">boozy</span> chai version of affogato</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="D4">Farmstand</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Quick bites</corr></choice><supplied> Vegans</supplied></rs> <rs type="style"><choice><sic>Global</sic><corr>Fusion</corr></choice></rs> <addrName>Covent Garden</addrName> <num type="price" value="1">￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Don’t expect strawberries in December at Farmstand – <gloss type="environment" target="#D5">a <span style="color:#11A2A7">clean-lined</span> <span style="color:#11A2A7">minimalist</span> diner inspired by the namesake roadside produce stalls of <span style="color:#11A2A7">America’s Midwest</span></gloss>. <gloss type="menu" target="#D5"><span style="color:#11A2A7">Unrefined</span>, <span style="color:#11A2A7">GM-free</span>, <span style="color:#11A2A7">sustainable</span> and <span style="color:#11A2A7">seasonal</span> are its watchwords, and the food’s also <span style="color:#11A2A7">healthy</span> without shoving the ethos down people’s throats</gloss>. <gloss type="environment" target="#D5"><span style="color:#11A2A7">Colourful</span> <name role="specialty" xml:id="D5.4" type="veggies">salad</name> boxes and trays are the big sellers</gloss>, supported by liquid assets including <name role="specialty" xml:id="D5.1" type="beverages">cold-pressed juices</name>, <name role="specialty" xml:id="D5.2" type="beverages">gluten-free lager</name> and <name role="specialty" xml:id="D5.3" type="beverages">filtered water</name>. <gloss type="tips" target="#D5">They do takeaways and online deliveries too</gloss>.</desc></p> 
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="D5">Flat Iron</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style"><supplied>European</supplied></rs> <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs> <addrName>Covent Garden</addrName> <num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#D6">Flat Iron are masters of the <span style="color:#11A2A7">£10 steak</span>; this was USP enough to start serious queueing outside the tiny Soho branches. The Covent Garden flagship is a different beast: it’s absolutely <span style="color:#11A2A7">ma-hoo-sive</span>, so your chances of waltzing in and <span style="color:#11A2A7">being seated straightaway</span> are real</gloss>. Miraculously, those <name role="specialty" xml:id="D6.1" type="dishes">flat iron steaks</name> are still just a tenner, alongside more expensive specials. Extra bonuses – as if we needed more <gloss type="cuisine" target="#D6.2"><span style="color:#11A2A7">incentive</span> – include a <span style="color:#11A2A7">free</span> <span style="color:#11A2A7">salted-caramel</span></gloss> <name role="specialty" xml:id="D6.2" type="desserts">ice cream cone</name> on your way out. Y’know, just because.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="D6">Flesh &amp; Buns</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">Japanese</rs> <rs type="ingredient"><supplied>Chicken</supplied></rs><addrName>Seven Dials</addrName> <num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="tips" target="#D7">Everything is turned up to <span style="color:#11A2A7">11</span> in this <span style="color:#11A2A7">hip</span> Covent Garden basement</gloss>, and <gloss type="environment" target="#D7">your initiation starts with the <span style="color:#11A2A7">banging</span> rock music that greets you before you even make it down the stairs</gloss>. Just grab a seat and commit to the concept: <gloss type="menu" target="#D7">Flesh &amp; Buns does ‘<span style="color:#11A2A7">drinking food</span>’</gloss>, so order <name role="specialty" xml:id="D7.1" type="beverages">yuzu margaritas</name> and <gloss type="cuisine" target="#D7.2"><span style="color:#11A2A7">flavoursome</span> <span style="color:#11A2A7">signature</span></gloss> <name role="specialty" xml:id="D7.2" type="small plates">bao</name> at a ratio of about 1:1. <gloss type="tips" target="#D7">Go with a group</gloss> – and don’t miss the <gloss type="cuisine" target="#D7.3"><span style="color:#11A2A7">finger-licking</span></gloss> <name role="specialty" xml:id="D7.3" type="dishes">fried chicken</name>, <gloss type="cuisine" target="#D7.4"><span style="color:#11A2A7">kickass</span></gloss> <name role="specialty" xml:id="D7.4" type="small plates">Cali rolls</name>, and <gloss type="cuisine" target="#D7.3"><span style="color:#11A2A7">sexed-up</span> s’mores</gloss> <name role="specialty" xml:id="D7.5" type="small desserts">dessert</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="D7">Frenchie</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">French</rs> <addrName>Covent Garden</addrName> <num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#D8">This <span style="color:#11A2A7">chic</span> cousin of the Parisian original has London in its DNA</gloss> (chef-patron Gregory Marchand once headed up the kitchen at Fifteen, where Jamie Oliver gave him his oh-so-imaginative nickname). <gloss type="tips" target="#D8">You’ll need a <span style="color:#11A2A7">stack of cash</span> or an <span style="color:#11A2A7">amoeba-sized stomach</span> to be fed to bursting here: the <span style="color:#11A2A7">small plates are small</span></gloss>. But the <gloss type="menu" target="#D8">menu is all about <span style="color:#11A2A7">must-try dishes</span></gloss>, from <name role="specialty" xml:id="D8.1" type="baked">bacon scones with clotted cream</name>, to <name role="specialty" xml:id="D8.2" type="dishes">truffle-stuffed eggs</name>, to <name role="specialty" xml:id="D8.3" type="dishes">pulled-pork sliders</name>. <gloss type="cuisine" target="#D8.4">On a budget</gloss>? Stick to the <name role="specialty" xml:id="D8.4" type="full courses">set lunch</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="D8">Fumo</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Italian</rs> <addrName>Covent Garden</addrName> <num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#D9">You might think you’d stumbled into a post-catwalk party during London Fashion Week, what with all the <span style="color:#11A2A7">svelte glamour-pusses</span>, <span style="color:#11A2A7">David Gandy lookalikes</span> and <span style="color:#11A2A7">sundry hangers</span>-on mingling in this <span style="color:#11A2A7">capacious</span> <span style="color:#11A2A7">marble-hued</span> outpost of the San Carlo group</gloss>. If you’ve come here to eat rather than pose, however, <gloss type="menu" target="#D9">the food is <span style="color:#11A2A7">excellent</span> Italian fare at <span style="color:#11A2A7">comfortable prices</span></gloss> – from <name role="specialty" xml:id="D9.1" type="small plates">chichi cicchetti</name> and <name role="specialty" xml:id="D9.2" type="rice noodles">al dente pasta</name> to <name role="specialty" xml:id="D9.3" type="dishes">grills</name> and <gloss type="cuisine" target="#D9.4"><span style="color:#11A2A7">enticing</span></gloss> <name role="specialty" xml:id="D9.4" type="dishes">specials</name>.</desc></p>
+                        <p><note place="bottom">Venue says <q rend="italics">Fumo is a new concept cocktail bar, all day restaurant and late lounge, part of the San Carlo Group</q>.</note></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="D9">Hawksmoor Seven Dials</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fining dining</corr></choice></rs> <rs type="style">British</rs> <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs> <addrName>Seven Dials</addrName> <num type="price" value="4">￡￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Nobody – bar the occasional militant vegan – has a bad word to say about this <gloss type="menu" target="#D10"><span style="color:#11A2A7">meat paradise</span></gloss>. <gloss type="environment" target="#D10">The <span style="color:#11A2A7">cavernous subterranean space</span> – all <span style="color:#11A2A7">polished wood</span>, ashen <span style="color:#11A2A7">leather booths</span> and acres of <span style="color:#11A2A7">arquet flooring</span> – is undeniably <span style="color:#11A2A7">swanky</span></gloss>, but <gloss type="services" target="#D10">priceless staff keep things refreshingly <span style="color:#11A2A7">down to earth</span></gloss>. The <name role="specialty" xml:id="D10.1" type="dishes">steaks</name> are <gloss type="cuisine" target="#D10.1">hands-down the <span style="color:#11A2A7">best in town</span></gloss>, but other dishes refuse to be outshone. <gloss type="tips" target="#D10">The only decent thing to do in such circumstances is to stuff your face with <span style="color:#11A2A7">as much as</span> you can order</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+            </div1>
+        </body>
+    </text>
+    
+    
+    <!-- [ text 5 Soho  ...] -->
+    <text>
+        <front>
+            <div1 type="abstract">
+                <note place="top"><supplied>https://www.timeout.com/london/restaurants/restaurants-in-soho-london</supplied></note>
+                <head type="main">Soho</head>
+                <opener>
+                    <salute>West End eats don't come better than these</salute>              
+                    <byline>By<docAuthor>Time Out London Food &amp; Drink</docAuthor></byline> <dateline>Posted: <date when="2020-09-15">Tuesday September 15 2020</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        
+        <body> 
+            <!-- [ body of text 5 ... ] -->
+            <div1 type="main">
+                <num type='avgPrice' value="2.6"><supplied>￡￡-￡￡￡</supplied></num>
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E1">10 Greek Street</name></head>
+                    <p>><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">European</rs> <addrName>Soho</addrName> <num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#E1">A <span style="color:#11A2A7">small</span>, <span style="color:#11A2A7">unshowy</span> restaurant</gloss> that’s made a name for itself with a <gloss type="menu" target="#E1"><span style="color:#11A2A7">short</span> but <span style="color:#11A2A7">perfectly formed</span> menu</gloss> and <gloss type="environment" target="#E1">an <span style="color:#11A2A7">easy-going conviviality</span></gloss>. <gloss type="menu" target="#E1">Dishes are <span style="color:#11A2A7">seasonal</span> and it’s <span style="color:#11A2A7">good value for money</span></gloss>. <gloss type="service" target="#E1"><span style="color:#11A2A7">Adept</span>, <span style="color:#11A2A7">friendly</span> staff are a further plus</gloss>. Since reopening at the start of September, the restaurant is also focusing on ‘Roman style’ <name role="specialty" xml:id="E1.1" type="dishes">pizza</name>. <gloss type="environment" target="#E1">It’s also added <span style="color:#11A2A7">outdoor seating</span> as part of the area’s pedestrianisation</gloss>, and <gloss type="tips" target="#E1">tables can be <span style="color:#11A2A7">booked in advance</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E2">Bao</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Quick bites</corr></choice></rs> <rs type="style"><choice><sic>Taiwanese</sic><corr>Chinese</corr></choice></rs> <addrName>Soho</addrName> <num type="price" value="1">￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="menu" target="#E2">Though based on <span style="color:#11A2A7">Taiwanese street food dishes</span>, the kitchen pushes far beyond those boundaries</gloss>. The restaurant’s name derives from <name role="specialty" xml:id="E2.1" type="small plates">gua bao</name>: <gloss type="cuisine" target="#E2.1"><span style="color:#11A2A7">fluffy</span> <span style="color:#11A2A7">white</span> steamed buns, in this case filled with braised pork, sprinkled with <span style="color:#11A2A7">peanut powder</span></gloss>. Other sorts of bao (bun) are more slider-like. Yet <gloss type="menu" target="#E2">buns are only half the story</gloss>. <name role="specialty" xml:id="E2.2" type="small plates">Xiao chi</name> <gloss type="menu" target="#E2.2">(small eats) are given <span style="color:#11A2A7">equal prominence</span></gloss>, and the drinks list (<gloss type="cuisine" target="#E2.3">well-matched</gloss> <name role="specialty" xml:id="E2.3" type="beverages">beers</name>, <name role="specialty" xml:id="E2.4" type="beverages">chilled foam tea</name>, <gloss type="cuisine" target="#E2.5">glorious</gloss> <name role="specialty" xml:id="E2.5" type="beverages">peanut milk</name>, and <gloss type="cuisine" target="#E2.6">ten-year-aged</gloss> <name role="specialty" xml:id="E2.6" type="beverages">oolong teas</name>) is <gloss type="cuisine" target="#E2.6">distinguished</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E3">Barrafina Dean Street</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">European</rs> <addrName>Soho</addrName> <num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="tips" target="#E3">The no-bookings star of London’s tapas scene is... now <span style="color:#11A2A7">taking bookings</span>! But only on its counter stools, once among the most <span style="color:#11A2A7">clamoured-for seats</span> in town, a popular place to watch while the chefs dole out dazzlers</gloss> such as oozing <name role="specialty" xml:id="E3.1" type="fast food">tortillas</name> and <gloss type="cuisine" target="#E3.2">milk-fed</gloss> <name role="specialty" xml:id="E3.2" type="dishes">lamb’s sweetbreads</name> to go with picks from a knockout list of <name role="specialty" xml:id="E3.3" type="beverages">Spanish wines</name> and <name role="specialty" xml:id="E3.4" type="beverages">sherries</name>. Don’t worry, <gloss type="tips" target="#E3">the world isn’t completely back-to-front: <span style="color:#11A2A7">seats outside</span> can’t be pre-booked, <span style="color:#11A2A7">open for walk-ins</span> only</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E4">Berenjak</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Middle Eastern</rs> <addrName>Soho</addrName> <num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#E4">This <span style="color:#11A2A7">boho-chic Persian</span> joint, from the group behind Bao and Hoppers, may be <span style="color:#11A2A7">small</span> but it still packs a punch. Take a seat with views over the <span style="color:#11A2A7">open kitchen</span></gloss> and plump for one of the <gloss type="menu" target="#E4"><span style="color:#11A2A7">innovative</span> grills</gloss>. Our favourite was the <name role="specialty" xml:id="E4.1" type="dishes">poussin</name>: <gloss type="cuisine" target="#E4.1">its <span style="color:#11A2A7">charred</span>, <span style="color:#11A2A7">blackened edges</span> offset its <span style="color:#11A2A7">chilli, red pepper</span>, <span style="color:#11A2A7">sumac and garlic marinade</span></gloss>. <gloss type="environment" target="#E4">This Berenjak is <span style="color:#11A2A7">vibrant</span> and <span style="color:#11A2A7">atmospheric</span></gloss>, with <gloss type="service" target="#E4">This <span style="color:#11A2A7">eager-to-please</span> staff</gloss>, and a bill that won’t kill.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Order delivery</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E5">Blanchette</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">French</rs> <addrName>Soho</addrName> <num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#E5">Here’s a <span style="color:#11A2A7">delightful</span> distraction in the <span style="color:#11A2A7">heart of Soho</span> – a <span style="color:#11A2A7">French fantasy</span> complete with stripped furniture, objects d’<span style="color:#11A2A7">art</span></gloss> and <gloss type="menu" target="#E5">a menu that’s as <span style="color:#11A2A7">Gallic</span> as ‘La Marseillaise’</gloss>. Whether you fancy the <gloss type="cuisine" target="#E5.1"><span style="color:#11A2A7">oozing</span></gloss> <name role="specialty" xml:id="E5.1" type="small plates">camembert</name> or <gloss type="cuisine" target="#E5.2">a mighty helping</gloss> of <name role="specialty" xml:id="E5.2" type="dishes">braised lamb shoulder</name> with <name role="specialty" xml:id="E5.3" type="dishes">anchovies and soubise sauce</name> (<gloss type="cuisine" target="#E5.3">made from onions</gloss>), <gloss type="menu" target="#E5">the cooking is all about <span style="color:#11A2A7">fine ingredients</span> and <span style="color:#11A2A7">bourgeois sensibilities</span></gloss>. And <gloss type="environment" target="#E5">the <span style="color:#11A2A7">outdoor seating</span> of du jour only adds to the effect</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E6">Bob Bob Ricard</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">British</rs> <addrName>Soho</addrName> <num type="price" value="4">￡￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#E6"><span style="color:#11A2A7">Lavish</span>, <span style="color:#11A2A7">ostentatious</span>, <span style="color:#11A2A7">excessive</span> – in other words a <span style="color:#11A2A7">whole lotta fun</span></gloss>, <gloss type="tips" target="#E6">Bob Bob Ricard is an <span style="color:#11A2A7">outlandish one-off</span> for those who want to <span style="color:#11A2A7">impress business colleagues</span> or <span style="color:#11A2A7">hot dates</span></gloss>. <gloss type="environment" target="#E6">Louche Roaring Twenties decor</gloss> sets the scene for <gloss type="menu" target="#E6">an <span style="color:#11A2A7">indulgent</span> menu of <span style="color:#11A2A7">international comfort</span> food with a <span style="color:#11A2A7">Russian slant</span></gloss> – <name role="specialty" xml:id="E6.1" type="small plates">vareniki (potato dumplings)</name>, <name role="specialty" xml:id="E6.2" type="dishes">fish pie</name>, <name role="specialty" xml:id="E6.3" type="dishes">chicken kiev</name> etc. Just press the <name role="specialty" xml:id="E6.4" type="beverages">champagne</name> buzzer if you’re running low on bubbly.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E7">Bocca di Lupo</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">Italian</rs> <addrName>Soho</addrName> <num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#E7">The <span style="color:#11A2A7">buzz</span> is as important as the food at Jacob Kenedy and Victor Hugo’s <span style="color:#11A2A7">enduringly popular</span> restaurant. Dine at the bar and you’re in for a fun time – especially if you sit by the window, where you can watch the <span style="color:#11A2A7">occasional celeb</span> swan into the dining room</gloss>. <gloss type="menu" target="#E7">The menu is a (<span style="color:#11A2A7">slightly confusin</span>) jumble of <span style="color:#11A2A7">small and large plates</span> celebrating the <span style="color:#11A2A7">best of artisan regional Italian cooking</span></gloss> – all supported by an <gloss type="cuisine" target="#E7.1"><span style="color:#11A2A7">enticing</span> selection</gloss> of <name role="specialty" xml:id="E7.1" type="beverages">cocktails</name> and an <gloss type="cuisine" target="#E7.2"><span style="color:#11A2A7">impressive</span> all-Italian</gloss> <name role="specialty" xml:id="E7.2" type="beverages">wine</name> list.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E8">Burger &amp; Lobster Soho</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">American</rs> <addrName>Soho</addrName> <num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#E8">You know where you are with the Burger &amp; Lobster chain – and this <span style="color:#11A2A7">flashily decorated</span> Soho branch is no exception</gloss>. Obviously, everything hinges on the titular combo of <gloss type="cuisine" target="#E8.1">hand-minced</gloss> <name role="specialty" xml:id="E8.1" type="fast food">burgers</name> (<gloss type="cuisine" target="#E8.1">made from Nebraskan beef</gloss>) and <name role="specialty" xml:id="E8.2" type="dishes">lobsters</name> (<gloss type="cuisine" target="#E8.2">shipped over <span style="color:#11A2A7">from Nova Scotia</span></gloss>), although B&amp;L have tweaked their offer of late, adding a <gloss type="cuisine" target="#E8.3"><span style="color:#11A2A7">veggie</span></gloss> <name role="specialty" xml:id="E8.3" type="veggies">black bean burger</name> and a <name role="specialty" xml:id="E8.4" type="dishes">brioche roll with chilled lobster and Japanese mayo</name> to the menu. There are also some <gloss type="cuisine" target="#E8.5">lush</gloss> <name role="specialty" xml:id="E8.5" type="desserts">desserts</name> if you still have room.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Order delivery</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E9">Ceviche Soho</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">Peruvian</rs> <rs type="style"><supplied>Chicken</supplied></rs><addrName>Soho</addrName><num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#E9">The Peruvian party hasn’t stopped on Frith Street since Ceviche showed up: Martin Morales’s restaurant-bar (and his <span style="color:#11A2A7">joie de vivre</span>) seems to have struck a chord with Londoners</gloss>. <name role="specialty" xml:id="E9.1" type="beverages">Pisco cocktails</name> alone are <gloss type="cuisine" target="#E9.1"><span style="color:#11A2A7">worth a visit</span></gloss>, but the <gloss type="cuisine" target="#E9.2">food is just as <span style="color:#11A2A7">impressive</span>. Obviously the <span style="color:#11A2A7">star of the show</span></gloss> is <name role="specialty" xml:id="E9.2" type="dishes">Pceviche</name>. Order with <name role="specialty" xml:id="E9.3" type="desserts">corn cakes</name>, <gloss type="cuisine" target="#E9.4"><span style="color:#11A2A7">fresh</span> and <span style="color:#11A2A7">vibrant</span></gloss> <name role="specialty" xml:id="E9.4" type="veggies">salads packed with avocado</name> and <name role="specialty" xml:id="E9.5" type="dishes">lightly spiced chicken dishes</name> and <gloss type="cuisine" target="#E9.5">you’ll be <span style="color:#11A2A7">feeling higher</span> than a gap-year student on a Peruvian journey of self-discovery</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="E10">Chin Chin Dessert Club</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Desserts</corr></choice></rs> <rs type="style"><choice><sic>Ice-cream parlours</sic><corr>European</corr></choice></rs> <addrName>Soho</addrName> <num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">From those devilishly clever mavericks at Camden’s experimental Chin Chin Labs, this <gloss type="cuisine" target="#E10.1">Soho venue is famous for its <span style="color:#11A2A7">out-there</span></gloss> <name role="specialty" xml:id="E10.1" type="desserts">ice creams</name> but bills itself as a Dessert Club – so <gloss type="menu" target="#E10">expect plenty of <span style="color:#11A2A7">saccharine surprises</span> along the way</gloss>. Perch at the <gloss type="environment" target="#E10"><span style="color:#11A2A7">bleacher-style</span> bench in the centre of the <span style="color:#11A2A7">lurid marble</span> and <span style="color:#11A2A7">gold</span> room</gloss> and indulge in <gloss type="menu" target="#E10"><span style="color:#11A2A7">wacky</span> Willy Wonka treats <span style="color:#11A2A7">galore</span></gloss>. Anyone up for the <name role="specialty" xml:id="E10.2" type="desserts">compressed strawberry ice cream topped with chocolate fudge sauce</name>?</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+            </div1>
+        </body>
+    </text>
+    
+    
+    <!-- [ text 6 mayfair  ...] -->
+    <text>
+        <front>
+            <div1 type="abstract">
+                <note place="top"><supplied>https://www.timeout.com/london/restaurants/mayfair-restaurants</supplied></note>
+                <head type="main">Mayfair</head>
+                <opener>
+                    <salute>Throw on your finest bling, grab the keys to your Rolls and meet us in the Monopoly board’s most expensive destination. Here are the best restaurants in Mayfair</salute>              
+                    <byline>By<docAuthor>Time Out London Food &amp; Drink</docAuthor></byline> <dateline>Posted: <date when="2018-10-11">Thursday October 11 2018</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        
+        <body> 
+            <!-- [ body of text 6 ... ] -->
+            <div1 type="main">
+                <num type='avgPrice' value="3.5"><supplied>￡￡￡-￡￡￡￡</supplied></num>
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F1">34</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style"><choice><sic>Contemporary Global</sic><corr>Fusion</corr></choice></rs> <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs><addrName>Mayfair</addrName> <num type="price" value="4"><supplied>￡￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">One of Caprice Holdings’ many Mayfair baubles, <gloss type="menu" target="#F1">34 is favoured by fortune-laden foreigners who don’t mind paying for reassuringly familiar dishes cooked just so. The emphasis here is on <span style="color:#11A2A7">premium steaks</span></gloss>, ranging from <gloss type="cuisine" target="#F1.1">Argentinian grass-fed</gloss> <name role="specialty" xml:id="F1.1" type="dishes">Angus sirloin</name> to <name role="specialty" xml:id="F1.2" type="dishes">Japanese wagyu fillet</name> – although <gloss type="environment" target="#F1"><span style="color:#11A2A7">top-end seafood</span> and <span style="color:#11A2A7">luxury versions of other global favourites</span> steer 34 away from full-on steakhouse territory</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F2">Bentley’s Oyster Bar &amp; Grill</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Causual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style"><supplied>European</supplied></rs>  <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs> <addrName>Mayfair</addrName><num type="price" value="4">￡￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="cuisine" target="#F2.1"><span style="color:#11A2A7">Freshly shucked</span></gloss> <name role="specialty" xml:id="F2.1" type="dishes">oysters</name> <gloss type="cuisine" target="#F2.1">steal the show</gloss> at <gloss type="environment" target="#F2">Richard Corrigan’s immensely <span style="color:#11A2A7">civilised</span> and carefully <span style="color:#11A2A7">polished</span> seafood veteran – especially if you’re grazing at the <span style="color:#11A2A7">marble-topped ground-floor bar</span> or <span style="color:#11A2A7">carousing</span> <span style="color:#11A2A7">alfresco</span> on the <span style="color:#11A2A7">chic</span>, <span style="color:#11A2A7">heated-and-covered</span> terrace</gloss>. Otherwise, head upstairs for <gloss type="service" target="#F2"><span style="color:#11A2A7">old-fashioned</span> service</gloss>, <gloss type="environment" target="#F2">clubby <span style="color:#11A2A7">wood-and-leather</span> <span style="color:#11A2A7">cosiness</span></gloss> and <gloss type="cuisine" target="#F2.2"><span style="color:#11A2A7">unfussy</span> plates of <span style="color:#11A2A7">pristine</span></gloss> <name role="specialty" xml:id="F2.2" type="dishes">seafood</name> in the more formal Grill restaurant – don’t miss the fish pie.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F3">Bombay Bustle</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Causual dining</corr></choice></rs> <rs type="style">Indian</rs> <addrName>Mayfair</addrName><num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#F3">It’s <span style="color:#11A2A7">love at first whiff</span> once you step inside this casual offshoot of swish Jamavar. There’s plenty of <span style="color:#11A2A7">bustle and noisy</span> chatter too, while the <span style="color:#11A2A7">fragrance and smoky aromas</span> speak of killer Indian cooking</gloss>. Our current faves? The <name role="specialty" xml:id="F3.1" type="full courses">dense goat keema served with buttered buns</name>, the <gloss type="cuisine" target="#F3.2"><span style="color:#11A2A7">Goan-style</span></gloss> <name role="specialty" xml:id="F3.2" type="full courses">stone bass tikka</name> and the <gloss type="cuisine" target="#F3.3"><span style="color:#11A2A7">moist</span>, <span style="color:#11A2A7">chunky</span></gloss> <name role="specialty" xml:id="F3.3" type="full courses">lamb biryani</name>. <gloss type="environment" target="#F3">Bombay Bustle is also darned <span style="color:#11A2A7">affordable</span> by Mayfair standards – and it’s great <span style="color:#11A2A7">fun</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F4">Burger &amp; Lobster</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Causual dining</corr></choice></rs> <rs type="style">American</rs>  <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs> <addrName>Mayfair</addrName><num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">A <gloss type="cuisine" target="#F4.1">£16</gloss> <name role="specialty" xml:id="F4.1" type="fast food">burger</name> is <gloss type="cuisine" target="#F4.1">a <span style="color:#11A2A7">bargain</span> in Mayfair – especially when it’s one of this calibre, and the <span style="color:#11A2A7">fries are included</span></gloss>. But <gloss type="cuisine" target="#F4.2">for our money, the <span style="color:#11A2A7">best-value</span> dish</gloss> is still the <name role="specialty" xml:id="F4.2" type="dishes">lobster</name> part of the B&amp;L equation, at <gloss type="cuisine" target="#F4.3">£27 for more than a pound</gloss> of <name role="specialty" xml:id="F4.3" type="fast food">wild Atlantic flesh</name>. We also love this offshoot of the Goodman steakhouse chain for its <gloss type="cuisine" target="#F4.4"><span style="color:#11A2A7">energy</span>, <span style="color:#11A2A7">unpretentiousness</span> and <span style="color:#11A2A7">excellent</span></gloss> <name role="specialty" xml:id="F4.4" type="beverages">cocktails</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Order delivery</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F5">Cecconi’s</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Causual dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">Italian</rs> <addrName>Mayfair</addrName><num type="price" value="4"><supplied>￡￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="menu" target="#F5">This <span style="color:#11A2A7">timeless favourite</span> is to the jet-set what Pizza Express is to hoi polloi: a culinary comfort blanket when travelling abroad (except its branches are only found in ultra-glam destinations)</gloss>. <gloss type="service" target="#F5">Cecconi’s is a <span style="color:#11A2A7">consummate crowd-pleaser</span> whose white-jacketed <span style="color:#11A2A7">staff ensure everything runs with minimum fuss</span></gloss> so that you can concentrate on its <gloss type="cuisine" target="#F5.1"><span style="color:#11A2A7">excellent</span></gloss> <name role="specialty" xml:id="F5.1" type="full courses">Italian classics</name> while counting the Ferraris and facelifts.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F6">China Tang</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style">Chinese</rs> <addrName>Park Lane</addrName><num type="price" value="4"><supplied>￡￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#F6"><span style="color:#11A2A7">Unforgiving</span> prices come with the territory at this <span style="color:#11A2A7">glam</span> <span style="color:#11A2A7">art-deco mock-up</span> of decadent 1930s Shanghai in the bowels of The Dorchester</gloss>. Still, we say ‘go for it’: signatures such as the <name role="specialty" xml:id="F6.1" type="dishes">Peking duck</name>, <gloss type="cuisine" target="#F5=6.1"><span style="color:#11A2A7">ceremoniously carved</span> at the table, are among the <span style="color:#11A2A7">best in London</span></gloss>, while YOLO orders of <name role="specialty" xml:id="F6.2" type="dishes">abalone</name> or <name role="specialty" xml:id="F6.3" type="dishes">cold jellyfish with drunken chicken</name> <gloss type="cuisine" target="#F6.3">reward those who dare</gloss>. <gloss type="environment" target="#F6">Vintage <span style="color:#11A2A7">celeb-spotting</span> is a free-of-charge bonus</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F7">Chisou</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Causual dining</corr></choice></rs> <rs type="style">Japanese</rs> <addrName>Mayfair</addrName><num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">A great escape from the West End’s shopping bedlam, <gloss type="menu" target="#F7"><span style="color:#11A2A7">calmin</span> Chisou is an <span style="color:#11A2A7">unobtrusive</span> <span style="color:#11A2A7">shoo-in</span> for aficionados of pure-bred <span style="color:#11A2A7">traditional Japanese cuisine</span></gloss>. There’s excellent <name role="specialty" xml:id="F7.1" type="small plates">sushi</name>-<gloss type="cuisine" target="#F7.1">grazing for singletons who pitch up at the counter</gloss>, but <gloss type="environment" target="#F7">izakaya-style sharing is the way to go amid the <span style="color:#11A2A7">harmonious neutrality</span> of the <span style="color:#11A2A7">blond-wood</span> dining room</gloss>. We’re talking <name role="specialty" xml:id="F7.2" type="desserts">chawan mushi ‘custard’</name>, <name role="specialty" xml:id="F7.3" type="veggies">hijiki quinoa salad</name>, <name role="specialty" xml:id="F7.4" type="dishes">salted mackerel teriyaki</name>, and so on.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F8">Corrigan’s Mayfair</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style">British</rs> <addrName>Park Lane</addrName><num type="price" value="4"><supplied>￡￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#F8">Oh, the <span style="color:#11A2A7">luxury</span>. The <span style="color:#11A2A7">marble bar</span>! The <span style="color:#11A2A7">baby grand</span>! The <span style="color:#11A2A7">honey-gold lighting</span>! The <span style="color:#11A2A7">starched tablecloths</span> and <span style="color:#11A2A7">bottom-caressing chairs</span>! God, Corrigan’s is a <span style="color:#11A2A7">turn-on</span></gloss>. The dishes are, too, from the <gloss type="cuisine" target="#F8.1">toast-of-the-town</gloss> <name role="specialty" xml:id="F8.1" type="baked">soda bread</name> to the <gloss type="cuisine" target="#F8.2"><span style="color:#11A2A7">sighing</span></gloss> <name role="specialty" xml:id="F8.2" type="desserts">rhubarb-crumble soufflé</name>. And the happiest ending? Although spending your way through the a la carte is easy, <name role="specialty" xml:id="F8.3" type="full courses">set lunches</name> and <name role="specialty" xml:id="F8.4" type="full courses">Sunday roasts</name> have <gloss type="cuisine" target="#F8.4"><span style="color:#11A2A7">come-hither</span> prices</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F9">Galvin at The Athenaeum</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style">British</rs> <rs type="ingredient"><supplied>Chicken</supplied></rs><addrName>Piccadilly</addrName><num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">The high-flying Galvin brothers like a little bit of beurre, but <gloss type="menu" target="#F9">this hotel-based addition to their empire also flies the flag for old Albion as the kitchen dishes up <span style="color:#11A2A7">British ingredients in mainly French disguises</span></gloss> (think <name role="specialty" xml:id="F9.1" type="dishes">Goosnargh chicken</name> <gloss type="cuisine" target="#F9.1">with tempura courgette flower and sauce vierge</gloss>). <gloss type="service" target="#F9">What you get with the Galvin name is reliably impressive cooking backed by <span style="color:#11A2A7">spot-on service</span></gloss> in <gloss type="environment" target="#F9"><span style="color:#11A2A7">classy</span> (if somewhat soulless) surroundings</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="F10">Le Gavroche</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style">French</rs> <addrName>Mayfair</addrName><num type="price" value="4"><supplied>￡￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Michel Roux Jr’s flagship is the Tom Hanks of fine dining: <gloss type="menu" target="#F10">perennially <span style="color:#11A2A7">successful</span>, wholly <span style="color:#11A2A7">professional</span> and able to <span style="color:#11A2A7">charm</span> anyone with whom it comes into contact</gloss>. <gloss type="tips" target="#F10">Le Gavroche’s diners are out-of-towners with a bucket list and something to celebrate; moneybags regulars who heart this old timer’s <span style="color:#11A2A7">consistency</span> and <span style="color:#11A2A7">exclusivity</span>; and skint foodies tucking into the <gloss type="cuisine" target="#F10.1"><span style="color:#11A2A7">best-value</span> <span style="color:#11A2A7">gourmet</span></gloss> <name role="specialty" xml:id="F10.1" type="full courses">set lunch</name> in town</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+            </div1>
+        </body>
+    </text>
+    
+    
+    <!-- [ text 8 south-kensingtons  ...] -->
+    <text>
+        <front>
+            <div1 type="abstract">
+                <note place="top"><supplied>https://www.timeout.com/london/restaurants/south-kensingtons-best-restaurants</supplied></note>
+                <head type="main">South Kensington</head>
+                <opener>
+                    <salute>There's more to this affluent bit of town than tourist-baiting, museum-orbiting chains, y'know.</salute>              
+                    <byline>By<docAuthor>Time Out London Food &amp; Drink</docAuthor></byline> <dateline>Posted: <date when="2020-03-04">Wednesday March 4 2020</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        
+        <body> 
+            <!-- [ body of text 7 ... ] -->
+            <div1 type="main">
+                <num type='avgPrice' value="3.1"><supplied>￡￡￡</supplied></num>
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="G1">Bibendum Oyster Bar</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style"><supplied>British</supplied></rs>  <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs> <addrName>South Kensington</addrName><num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#G1">After a spot of retail therapy in the nearby shops, stick-thin ladies who lunch (and others) repair to this <span style="color:#11A2A7">relaxed</span> <span style="color:#11A2A7">all-day seafood café</span> in the tiled foyer of the Bibendum building</gloss>.<name role="specialty" xml:id="G1.1" type="dishes">Oysters</name>, <name role="specialty" xml:id="G1.2" type="dishes">crabs</name> and <name role="specialty" xml:id="G1.3" type="dishes">lobsters</name> are the prime attractions (naturellement), but there are also <gloss type="cuisine" target="#G1.4"><span style="color:#11A2A7">elaborate</span></gloss> <name role="specialty" xml:id="G1.4" type="veggies">plateaux de fruits de mer</name> <gloss type="cuisine" target="#G1.4">for those who fancy sharing</gloss>. Prefer something meaty? Try a <name role="specialty" xml:id="G1.5" type="fast food">burger</name> or <name role="specialty" xml:id="G1.6" type="dishes">steak tartare with fries</name> – preferably with <gloss type="cuisine" target="#G1.7">a <span style="color:#11A2A7">classy</span> tipple from the <span style="color:#11A2A7">thoroughbred</span></gloss> <name role="specialty" xml:id="G1.7" type="beverages">wine</name> list.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="G2"><choice><sic>Casa Brindisa</sic><corr>Tapas Brindisa</corr></choice></name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Spanish</rs> <addrName>South Kensington</addrName><num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="menu" target="#G2"><span style="color:#11A2A7">Pedigree and provenance are everything</span> at Brindisa (the <span style="color:#11A2A7">much-vaunted</span> importer of Spanish provisions)</gloss>, so it’s no surprise that this <gloss type="environment" target="#G2"><span style="color:#11A2A7">family-friendly</span></gloss> <gloss type="menu" target="#G2"><span style="color:#11A2A7">tapas bar</span>, <span style="color:#11A2A7">deli</span> and <span style="color:#11A2A7">shrine</span> to <span style="color:#11A2A7">jamón</span> is a hot proposition on one of South Ken’s main drags</gloss>. Top picks range from <name role="specialty" xml:id="G2.1" type="veggies">Catalan spinach with pine nuts and raisins</name> to <name role="specialty" xml:id="G2.2" type="dishes">grilled Galician octopus with potato cream and paprika aïoli</name>, while <name role="specialty" xml:id="G2.3" type="beverages">sherries</name>, <gloss type="cuisine" target="#G2.4"><span style="color:#11A2A7">super-sized</span></gloss> <name role="specialty" xml:id="G2.4" type="beverages">G&amp;Ts</name> and <name role="specialty" xml:id="G2.5" type="beverages">regional wines</name> seal the deal. <gloss type="environment" target="#G2">Handily placed for the <span style="color:#11A2A7">museums</span> and the <span style="color:#11A2A7">Royal Albert Hall</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="G3">Ceru</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Middle Eastern</rs> <addrName>South Kensington</addrName><num type="price" value="1">￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="menu" target="#G3">‘<span style="color:#11A2A7">Fresh, clean, fun and colourful</span>’ sums up the food, the decor</gloss> and the <gloss type="service" target="#G3"><span style="color:#11A2A7">merry</span> staff</gloss> at <gloss type="environment" target="#G3">this <span style="color:#11A2A7">cute</span> Levantine diner just off Old Brompton Road</gloss>. <gloss type="menu" target="#G3">A <span style="color:#11A2A7">bustling</span> open kitchen turns out the best from a region covering <span style="color:#11A2A7">Turkey to Israel</span> (and everything in between)</gloss>, so expect a raft of <name role="specialty" xml:id="G3.1" type="small plates">fragrant dips</name>, ‘<name role="specialty" xml:id="G3.2" type="small plates">green bits</name>’ and <name role="specialty" xml:id="G3.3" type="small plates">meze morsels</name> followed by intriguing <name role="specialty" xml:id="G3.4" type="dishes">kebabs</name>, <name role="specialty" xml:id="G3.5" type="dishes">skewered grills</name>, <name role="specialty" xml:id="G3.6" type="fast food">Persian kaftas (beef patties</name>) and other specialities, <gloss type="menu" target="#G3">all liberally strewn or stuffed with <span style="color:#11A2A7">jewel-like</span> pomegranate seeds</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="G4">Claude Bosi at Bibendum</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style">French</rs> <addrName>South Kensington</addrName><num type="price" value="4">￡￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#G4">A bona fide London institution with a new <span style="color:#11A2A7">fine-dining</span> powerhouse at the helm, Bibendum remains London’s <span style="color:#11A2A7">nattiest</span> and most <span style="color:#11A2A7">heart-warmingly</span> <span style="color:#11A2A7">pleasurable</span> dining room</gloss> – although <gloss type="menu" target="#G4">über-chef Claude Bosi (of Hibiscus fame) is putting his own <span style="color:#11A2A7">dizzyingly technical</span> and <span style="color:#11A2A7">dazzlingly creative</span> stamp on proceedings. Prices are <span style="color:#11A2A7">unnervingly high</span>, but the food is <span style="color:#11A2A7">overwhelmingly excellent</span> – so go on, <span style="color:#11A2A7">blow the budget</span> and <span style="color:#11A2A7">prepare to be blown away by signature dishes</span></gloss> such as the <name role="specialty" xml:id="G4.1" type="dishes">no-rice ‘nosotto’</name> <gloss type="cuisine" target="#G4.1">with English snails, chervil and vine jaune</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="G5">Daphne's</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style">Italian</rs> <addrName>South Kensington</addrName><num type="price" value="4"><supplied>￡￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">It has perked up following its post-fire refurb in 2014, but Daphne’s current incarnation will forever be compared to its Princess Di glory days. <gloss type="environment" target="#G5">Togged out like a <span style="color:#11A2A7">snazzy</span> Italian townhouse (complete with a canopied conservatory)</gloss>, <gloss type="menu" target="#G5">it serves <span style="color:#11A2A7">punchy</span> regional food</gloss> – leavening its <gloss type="cuisine" target="#G5.1"><span style="color:#11A2A7">muscular</span></gloss> <name role="specialty" xml:id="G5.1" type="dishes">pastas</name>, <name role="specialty" xml:id="G5.2" type="dishes">grills</name> and <name role="specialty" xml:id="G5.3" type="veggies">seasonal black truffles with more delicate salads</name>, <name role="specialty" xml:id="G5.4" type="dishes">carpaccios</name> and <gloss type="cuisine" target="#G5.5"><span style="color:#11A2A7">briny-fresh</span></gloss> <name role="specialty" xml:id="G5.5" type="dishes">seafood</name>. <gloss type="service" target="#G5">Service remains a <span style="color:#11A2A7">strong point</span>, honed by years of attending to a gaggle of Bolly-glugging regulars</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="G6">Daquise</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style">Polish</rs> <addrName>South Kensington</addrName><num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">A home-from-home for expats since 1947, <gloss type="environment" target="#G6">this <span style="color:#11A2A7">much-loved</span> grand-dame among London’s Polish restaurants strides valiantly onward – although it has a <span style="color:#11A2A7">breezier</span>, <span style="color:#11A2A7">shabby-chic brasserie</span> look these days</gloss>. <gloss type="tips" target="#G6">The exiled Polish president was a regular</gloss>, and punters still come for <gloss type="menu" target="#G6"><span style="color:#11A2A7">flavourful</span> <span style="color:#11A2A7">no-nonsense</span> dishes from the old country (and beyond). All the <span style="color:#11A2A7">classics</span> can be relied on here</gloss> (<name role="specialty" xml:id="G6.1" type="soups">zurek soup</name>, <name role="specialty" xml:id="G6.2" type="small plates">pierogi</name>, <name role="specialty" xml:id="G6.3" type="dishes">confit goose</name> etc), so <gloss type="cuisine" target="#G6.4">expect bowls and plates of <span style="color:#11A2A7">gut-busting, cockle-warming comfort</span> washed down with <span style="color:#11A2A7">punchy</span></gloss> <name role="specialty" xml:id="G6.4" type="beverages">beers</name> and <gloss type="cuisine" target="#G6.5"><span style="color:#11A2A7">head-banging</span></gloss> <name role="specialty" xml:id="G6.5" type="beverages">vodkas</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="G7">Dinings SW3</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Causual dining</corr></choice></rs> <rs type="style">Japanese</rs> <addrName>Belgravia</addrName><num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Everything about this follow-up to <gloss type="environment" target="#G7">Japanese hotspot Dinings in Marylebone is an improvement, from the <span style="color:#11A2A7">glitzy</span>, <span style="color:#11A2A7">capacious</span> dining room</gloss> to the <gloss type="menu" target="#G7"><span style="color:#11A2A7">quietly ambitious</span>, <span style="color:#11A2A7">head-turning</span> menu</gloss>. Signatures such as the ‘<gloss type="cuisine" target="#G7.1"><span style="color:#11A2A7">modern</span></gloss>’ <name role="specialty" xml:id="G7.1" type="small plates">sushi</name> and <gloss type="cuisine" target="#G7.2"><span style="color:#11A2A7">bang-on</span></gloss> <name role="specialty" xml:id="G7.2" type="small plates">teriyaki wagyu beef buns</name> have made the trip down to SW3, but also look for palate-jangling newcomers including <name role="specialty" xml:id="G7.3" type="dishes">josper-charred ibérico pork with savoy cabbage and walnut miso vinaigrette</name>. <gloss type="menu" target="#G7"><span style="color:#11A2A7">Tiny portions</span> and <span style="color:#11A2A7">complex precision-tuned flavours</span> are the norm – as are <span style="color:#11A2A7">big-city prices</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="G8">Elystan Street</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style">British</rs> <addrName>South Kensington</addrName><num type="price" value="4"><supplied>￡￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Chef Phil Howard’s casual follow-up to The Square in Mayfair (RIP) is <gloss type="menu" target="#G8">a <span style="color:#11A2A7">sleek</span> but <span style="color:#11A2A7">casual rendezvous</span>, serving up <span style="color:#11A2A7">meticulously</span> presented <span style="color:#11A2A7">high-end food</span> in <span style="color:#11A2A7">warm low-lit surround</span>s with a <span style="color:#11A2A7">hefty price</span> tag</gloss> – although the <gloss type="cuisine" target="#G8.1">£30</gloss> <name role="specialty" xml:id="G8.1" type="full courses">set lunch</name> is <gloss type="cuisine" target="#G8.1">a <span style="color:#11A2A7">steal</span> in this well-to-do part of town</gloss>. <gloss type="menu" target="#G8">Expect a procession of tip-top Euro-accented dishes</gloss> such as <name role="specialty" xml:id="G8.2" type="full courses">Cornish mackerel fillet</name> <gloss type="cuisine" target="#G8.2">with crushed potatoes, glazed lettuce, vichyssoise sauce and rhubarb</gloss>, backed by a strong list of <gloss type="cuisine" target="#G8.3">big-ticket</gloss> <name role="specialty" xml:id="G8.3" type="beverages">wines</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book Online</surplus></p>
+                    </div3>
+                </div2>
+            </div1>
+        </body>
+    </text>
+    
+    
+    
+    <!-- [ text 9 islington  ...] -->
+    <text>
+        <front>
+            <div1 type="abstract">
+                <note place="top"><supplied>https://www.timeout.com/london/restaurants/islington-restaurants</supplied></note>
+                <head type="main">Islington</head>
+                <opener>
+                    <salute>Find the best places to eat in Islington from Upper Street’s stretch of restaurants and beyond</salute>              
+                    <byline>By<docAuthor>Time Out London Food &amp; Drink</docAuthor></byline> <dateline>Posted: <date when="2020-02-20">Thursday February 20 2020</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        
+        <body> 
+            <!-- [ body of text 8 ... ] -->
+            <div1 type="main">
+                <num type='avgPrice' value="2.2"><supplied>￡￡</supplied></num>
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="H1">12:51</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">British</rs> <addrName>Angel</addrName><num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#H1">It’s named after a song by The Strokes, <span style="color:#11A2A7">there are vinyl sleeves on the walls</span> and the <span style="color:#11A2A7">tables are all scuffed up</span></gloss>, <gloss type="menu" target="#H1">but it’s <span style="color:#11A2A7">quality</span> all the way at this <span style="color:#11A2A7">near-flawless solo venture</span> from chef James Cochran (ex-The Ledbury and the Harwood Arms). <span style="color:#11A2A7">Flavours are new-Brit</span> with <span style="color:#11A2A7">a Scottish/Caribbean</span> kick reflecting <span style="color:#11A2A7">Cochran’s roots</span>, while <span style="color:#11A2A7">compositions are complex</span> but <span style="color:#11A2A7">never OTT</span></gloss>. <name role="specialty" xml:id="H1.1" type="full courses">Midweek lunches</name> <gloss type="cuisine" target="#H1.1">(Wed-Fri) promise <span style="color:#11A2A7">three plates for £15</span></gloss>, and <name role="specialty" xml:id="H1.2" type="full courses">Sunday lunch</name> is <gloss type="cuisine" target="#H1.2">one <span style="color:#11A2A7">mighty</span> blowout</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Buy</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="H2">Afghan Kitchen</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Vegans</supplied></rs> <rs type="style">Afghan</rs> <addrName>Angel</addrName><num type="price" value="1"><supplied>￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Overlooking Islington Green, Afghan Kitchen is a long-serving local favourite that’s never needed to change its style. <gloss type="environment" target="#H2">The <span style="color:#11A2A7">two-floor</span> premises are <span style="color:#11A2A7">bright</span>, <span style="color:#11A2A7">tidy</span> and <span style="color:#11A2A7">compact</span>, with <span style="color:#11A2A7">lots of shared tables</span></gloss> and <gloss type="menu" target="#H2">a menu of equally <span style="color:#11A2A7">straightforward home cooking</span></gloss> – think <gloss type="cuisine" target="#H2.1"><span style="color:#11A2A7">proper</span></gloss> <name role="specialty" xml:id="H2.1" type="baked">breads</name>, <gloss type="cuisine" target="#H2.2"><span style="color:#11A2A7">hearty</span>, <span style="color:#11A2A7">warming</span></gloss> <name role="specialty" xml:id="H2.2" type="dishes">stews</name> and <gloss type="cuisine" target="#H2.3"><span style="color:#11A2A7">filling</span></gloss> <name role="specialty" xml:id="H2.3" type="rice noodles">rice dishes</name>, with <gloss type="menu" target="#H2">plenty for <span style="color:#11A2A7">veggies</span> as well as <span style="color:#11A2A7">carnivores</span>. It’s also <span style="color:#11A2A7">cheap as chips</span>, with most mains weighing in around £7.50</gloss>. <gloss type="tips" target="#H2">Just remember to <span style="color:#11A2A7">bring cash</span> – it doesn’t take cards</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="H3">Bababoom Islington</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Brunch</supplied></rs> <rs type="style">Middle Eastern</rs> <addrName>Islington</addrName><num type="price" value="1"><supplied>￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#H3">A <span style="color:#11A2A7">hip kebab diner</span> for the twenty-first century, the Islington sibling of Bababoom in Battersea serves up the <span style="color:#11A2A7">real Middle Eastern deal</span> from a <span style="color:#11A2A7">cleverly designed</span>, <span style="color:#11A2A7">bespoke charcoal grill</span></gloss>. <gloss type="menu" target="#H3">Ingredients are <span style="color:#11A2A7">lovingly prepped</span>, portions are <span style="color:#11A2A7">generous</span>, and fillings are <span style="color:#11A2A7">modishly off-piste</span></gloss> (<name role="specialty" xml:id="H3.1" type="dishes">marinated mutton shawarma</name> <gloss type="cuisine" target="#H3.1">with <span style="color:#11A2A7">whipped feta</span>, <span style="color:#11A2A7">smoky pink ‘kraut</span>, <span style="color:#11A2A7">pomegranate seeds</span> and <span style="color:#11A2A7">harissa</span></gloss>, say). Don’t forget to order some <gloss type="cuisine" target="#H3.2"><span style="color:#11A2A7">well-oiled</span></gloss> <name role="specialty" xml:id="H3.2" type="baked">za’atar bread</name>, <name role="specialty" xml:id="H3.3" type="fast food">dukkah fries</name> and <gloss type="cuisine" target="#H3.4"><span style="color:#11A2A7">sticky</span></gloss> <name role="specialty" xml:id="H3.4" type="dishes">sumac wings</name> too. <name role="specialty" xml:id="H3.5" type="full courses">Weekend brunch</name> is also <gloss type="cuisine" target="#H3.5">worth checking out</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="H4">Brother Marcus Islington</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Brunch</supplied></rs> <rs type="style">Mediterranean</rs> <addrName>Angel</addrName><num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Like its siblings in Balham and Spitalfields, this branch of Brother Marcus sells itself as <gloss type="environment" target="#H4">an <span style="color:#11A2A7">all-purpose</span> neighbourhood hangout</gloss> with the <gloss type="menu" target="#H4">emphasis on <span style="color:#11A2A7">brunch</span> and <span style="color:#11A2A7">booze</span>. By day, it offers <span style="color:#11A2A7">on-trend brekkie</span> and <span style="color:#11A2A7">lunch combos</span> with an <span style="color:#11A2A7">Eastern Mediterranean slant</span></gloss> and names like <name role="specialty" xml:id="H4.1" type="full courses">Yummy Mummy</name> (<gloss type="cuisine" target="#H4.1"><span style="color:#11A2A7">falafel</span>, <span style="color:#11A2A7">quinoa tabbouleh</span>, <span style="color:#11A2A7">burnt aubergine</span>, <span style="color:#11A2A7">preserved lemon</span> and <span style="color:#11A2A7">beetroot tahini</span></gloss>); in the evenings, it’s all about <name role="specialty" xml:id="H4.2" type="beverages">cocktails</name> and more <gloss type="cuisine" target="#H4.3"><span style="color:#11A2A7">ambitious</span></gloss> <name role="specialty" xml:id="H4.3" type="small plates">small plates</name> <gloss type="cuisine" target="#H4.3">from ‘land’, ‘earth’ and ‘sea’</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book online</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="H5">Four Legs at The Compton Arms</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">British</rs> <addrName>Canonbury</addrName><num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">If you only order one thing at this <gloss type="environment" target="#H5"><span style="color:#11A2A7">small dining room</span> above the Compton Arms in Canonbury</gloss>, make sure it’s their <gloss type="cuisine" target="#H5.1"><span style="color:#11A2A7">bona fide</span>, <span style="color:#11A2A7">utterly brilliant</span></gloss> <name role="specialty" xml:id="H5.1" type="fast food">cheeseburger</name>. <gloss type="cuisine" target="#H5.1">It’s the <span style="color:#11A2A7">stuff of dreams</span>, a <span style="color:#11A2A7">sloppy</span>, <span style="color:#11A2A7">messy</span> thing comprising a <span style="color:#11A2A7">thin and juicy chargrilled patty made from Dexter beef</span> with <span style="color:#11A2A7">all your favourite accompaniments</span></gloss>. <gloss type="menu" target="#H5">The rest of the menu is a bit of a <span style="color:#11A2A7">mixed bag</span>, although we like the <span style="color:#11A2A7">salad-based</span> numbers</gloss> such as <name role="specialty" xml:id="H5.2" type="dishes">watermelon with needles of salted ricotta and flashes of fennel</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="H6">Frederick’s</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Brunch</supplied></rs> <rs type="style">European</rs> <addrName>Angel</addrName><num type="price" value="4">￡￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#H6">Old enough and wise enough to deserve the title ‘<span style="color:#11A2A7">Islington classic</span>’, dapper family-run Frederick’s (born in 1969) just keeps on keeping on – driven along by loyal customers who greatly appreciate its <gloss type="environment" target="#H6">lofty conservatory</gloss>, <span style="color:#11A2A7">striking contemporary artworks</span>, <span style="color:#11A2A7">pretty hidden garden</span></gloss> and <gloss type="menu" target="#H6"><span style="color:#11A2A7">gently fashionable modern European food</span>. Menus <span style="color:#11A2A7">change with the seasons</span> at this <span style="color:#11A2A7">ritzy local treat</span></gloss>, while <name role="specialty" xml:id="H6.1" type="full courses">fixed-price deals</name> and <name role="specialty" xml:id="H6.2" type="full courses">Saturday brunch</name> ensure that it’s <gloss type="menu" target="#H6"><span style="color:#11A2A7">great value</span> as well as <span style="color:#11A2A7">great fun</span></gloss>.</desc></p>
+                        <p><note place="bottom">Venue says <q rend="italics">We are delighted to be getting back to business with a Summer Pop up - it’s still Frederick’s, but in a slightly different format</q>.</note></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book online</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="H7">The Gate</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Vegans</supplied></rs> <rs type="style"><choice><sic>Vegetarian</sic><corr>European</corr></choice></rs> <addrName>Angel</addrName><num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#H7">A <span style="color:#11A2A7">class act in the veggie scheme</span> of things, this self-proclaimed ‘<span style="color:#11A2A7">plant-based pioneer</span>’ charms punters with its <span style="color:#11A2A7">modern, monochrome interior</span>, <span style="color:#11A2A7">open kitchen</span>, <span style="color:#11A2A7">huge windows</span> and <span style="color:#11A2A7">on-trend industrial-style lighting</span></gloss>. <gloss type="menu" target="#H7">Every dish is <span style="color:#11A2A7">beautifully presented</span>, with <span style="color:#11A2A7">bespoke accompaniments</span> complementing the <span style="color:#11A2A7">global big hits</span></gloss> – think <name role="specialty" xml:id="H7.1" type="veggies">marinated tofu with a quinoa</name>, <name role="specialty" xml:id="H7.2" type="veggies">avocado and tomato salsa</name> or <name role="specialty" xml:id="H7.3" type="veggies">shiitake ginger gyoza with crispy kale</name>, <name role="specialty" xml:id="H7.4" type="veggies">teriyaki sauce and roasted cashews</name>. <gloss type="environment" target="#H8"><span style="color:#11A2A7">Friendly</span> staff are bang-on when it comes to <span style="color:#11A2A7">allergies and special diets</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="H8">Isarn</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Thai</rs> <addrName>Islington</addrName><num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#H8">Despite its <span style="color:#11A2A7">longevity on the Islington scene</span>, Isarn still exudes a <span style="color:#11A2A7">slinky</span>, <span style="color:#11A2A7">contemporary vibe</span> – thanks to <span style="color:#11A2A7">timeless black-and-white interiors</span> and <span style="color:#11A2A7">warm yellow lighting</span></gloss>. Although it’s named after the chef’s home region of Isaan, the <gloss type="menu" target="#H8">menu is mostly composed of <span style="color:#11A2A7">familiar Thai salads</span>, <span style="color:#11A2A7">soups</span>, <span style="color:#11A2A7">curries</span> and <span style="color:#11A2A7">stir-fries</span> rather than distinctive regional specialities</gloss>. <gloss type="environment" target="#H8">Isarn may look expensive, but the food remains surprisingly <span style="color:#11A2A7">wallet-friendly</span></gloss> – especially if you pop in for one of its special <name role="specialty" xml:id="H8.1" type="full courses">set lunches</name> or a bowl of <name role="specialty" xml:id="H8.2" type="rice noodles">pad thai</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="H9">Latteria</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Italian</rs> <addrName>Islington</addrName><num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#H9">A <span style="color:#11A2A7">loveable</span> slice of 1950s Milan on the lesser-visited strip of Essex Road, Latteria flaunts its <span style="color:#11A2A7">daytime charms</span> against a <span style="color:#11A2A7">stylish backdrop of pillarbox-red tiles</span>, <span style="color:#11A2A7">trendy terrazzo flooring</span> and <span style="color:#11A2A7">retro Italian provisions</span></gloss>. <gloss type="menu" target="#H9">The menu’s <span style="color:#11A2A7">easy to love</span> too, with its <span style="color:#11A2A7">crowd-pleasing</span> line-up</gloss> of classic <name role="specialty" xml:id="H9.1" type="small plates">cicchetti</name>, <name role="specialty" xml:id="H9.2" type="small plates">antipasti</name>, <name role="specialty" xml:id="H9.3" type="rice noodles">pasta</name>, <name role="specialty" xml:id="H9.4" type="fast food">pizzas</name> and <gloss type="cuisine" target="#H9.5">big-plate</gloss> <name role="specialty" xml:id="H9.5" type="dishes">secondi</name>. <gloss type="tips" target="#H9">Latteria also flexes its culinary muscles in the <span style="color:#11A2A7">evenings (Thu-Sat)</span> with a roster of similar dishes</gloss>. <gloss type="environment" target="#H9">Enjoy it all alfresco on the <span style="color:#11A2A7">fair-sized terrace</span> in good weather</gloss>.</desc></p>
+                        <p><note place="bottom">Venue says <q rend="italics">Latteria is a cafe, restaurant and bar that draws inspiration from the pasticceria, panino shops and pizzeria’s in Milan</q>.</note></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+            </div1>
+        </body>
+    </text>
+    
+    
+    <!-- [ text 10 hammersmith  ...] -->
+    <text>
+        <front>
+            <div1 type="abstract">
+                <note place="top"><supplied>https://www.timeout.com/london/restaurants/hammersmith-restaurants</supplied></note>
+                <head type="main">Hammersmith</head>
+                <opener>
+                    <salute>Looking for a Hammersmith hotspot? Here's our guide to eating in the area</salute>              
+                    <byline>By<docAuthor><supplied>Time Out London Food &amp; Drink</supplied></docAuthor></byline> <dateline>Posted: <date when="2019-02-06">Wednesday February 6 2019</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        
+        <body> 
+            <!-- [ body of text 9 ... ] -->
+            <div1 type="main">
+                <num type='avgPrice' value="2.3"><supplied>￡￡</supplied></num>
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="I1">101 Thai Kitchen</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Thai</rs> <addrName>Hammersmith</addrName><num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="menu" target="#I1">The cooking at this no-nonsense Hammersmith establishment is largely from the <span style="color:#11A2A7">Isan region of north-east Thailand</span></gloss> and includes multiple versions of <name role="specialty" xml:id="I1.1" type="dishes">green papaya salad</name>, <gloss type="cuisine" target="#I1.1">embellished with anything from <span style="color:#11A2A7">salted duck egg</span> to <span style="color:#11A2A7">sausage</span></gloss>. Also expect various southern dishes such as <name role="specialty" xml:id="I1.2" type="dishes">sour prawn curry</name> or <name role="specialty" xml:id="I1.3" type="dishes">turmeric-marinated sea bass</name> prepared by cook Auntie Bee. <gloss type="service" target="#I1">Staff treat locals with <span style="color:#11A2A7">congeniality</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="I2">The Gate</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice><supplied> Vegans</supplied></rs> <rs type="style"><choice><sic>Vegetarian</sic><corr>European</corr></choice></rs> <addrName>Hammersmith</addrName><num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                    
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#I2">A <span style="color:#11A2A7">converted artist’s studio</span> behind the Hammersmith Apollo provides the setting for this branch of the Gate mini-chain</gloss>. <gloss type="menu" target="#I2">Expect <span style="color:#11A2A7">colourful</span>, <span style="color:#11A2A7">nourishing</span>, <span style="color:#11A2A7">eclectic dishes</span> with plenty of <span style="color:#11A2A7">ambition and serious veggie and vegan cred</span></gloss>, including <name role="specialty" xml:id="I2.1" type="full courses">meze platters</name> (<gloss type="cuisine" target="#I2.1"><span style="color:#11A2A7">salty feta fritters</span>, <span style="color:#11A2A7">mushroom ceviche</span>, <span style="color:#11A2A7">featherlight artichoke tempura</span></gloss>) and global big-hitters such as <name role="specialty" xml:id="I2.2" type="veggies">aubergine ‘teriyaki’</name>, <name role="specialty" xml:id="I2.3" type="rice noodles">raw pad Thai</name> or <name role="specialty" xml:id="I2.4" type="dishes">wild mushroom risotto cake</name>. <gloss type="cuisine" target="#I2.5"><span style="color:#11A2A7">Excellent</span></gloss> <name role="specialty" xml:id="I2.5" type="desserts">puds</name> too.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="I3">Kerbisher &amp; Malt</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">British</rs> <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs> <addrName>Hammersmith</addrName><num type="price" value="1"><supplied>￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#I3">Perched at the zenith of London-based fish and chippery</gloss>, this branch of scrubbed-up Kerbisher &amp; Malt goes that extra mile for its loyal Brook Green customers. <gloss type="cuisine" target="#I3.1"><span style="color:#11A2A7">High-quality</span></gloss> <name role="specialty" xml:id="I3.1" type="dishes">fillets</name> are <gloss type="cuisine" target="#I3.1">freshly dunked in <span style="color:#11A2A7">floaty-light batter</span></gloss>, <name role="specialty" xml:id="I3.2" type="fast food">chips</name> are <gloss type="cuisine" target="#I3.2"><span style="color:#11A2A7">double-fried</span></gloss>, the <gloss type="cuisine" target="#I3.3"><span style="color:#11A2A7">rich</span></gloss> <name role="specialty" xml:id="I3.3" type="small dishes">tartare sauce</name> is <gloss type="cuisine" target="#I3.3">made <span style="color:#11A2A7">in-house</span></gloss>, and the <name role="specialty" xml:id="I3.4" type="fast food">onion rings</name> are <gloss type="cuisine" target="#I3.4">pickled, adding an <span style="color:#11A2A7">appealing</span> <span style="color:#11A2A7">vinegary tang</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="I4">Mahdi</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Iranian</rs> <addrName>Hammersmith</addrName><num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Many Iranian restaurants strive to emulate the informality of the dinner parties at which so much of their nation’s cuisine is served. Not so with Mahdi, <gloss type="environment" target="#I4">a <span style="color:#11A2A7">sprawling</span> space <span style="color:#11A2A7">exotically festooned</span> with <span style="color:#11A2A7">carved wood</span>, <span style="color:#11A2A7">embroidered fabrics</span> and even a <span style="color:#11A2A7">stuffed peacock</span> in one corner</gloss>. <gloss type="tips" target="#I4">To eat, bypass Western dishes such as chicken Caesar salad</gloss> in favour of <gloss type="menu" target="#I4">authentic meze</gloss>, <name role="specialty" xml:id="I4.1" type="dishes">grills</name>, <name role="specialty" xml:id="I4.2" type="dishes">kebabs</name>, <name role="specialty" xml:id="I4.3" type="rice noodles">rice and stews</name>. <gloss type="menu" target="#I4">Portions are <span style="color:#11A2A7">humongous</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="I5">Mes Amis</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Lebanese</rs> <addrName>Fulham</addrName><num type="price" value="3"><supplied>￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#I5">It's on the same road as the high-stepping River Café, but this bijou family-run neighbourhood Lebanese restaurant couldn’t be more different. <span style="color:#11A2A7">Kitsch</span>, <span style="color:#11A2A7">kooky</span>, <span style="color:#11A2A7">colourful</span> and <span style="color:#11A2A7">stuffed with knick-knacks</span> (musical instruments, fans etc), it feels like someone’s front room with a kitchen in the middle blasting out <span style="color:#11A2A7">heat and spicy aromas</span></gloss>. Don’t be fooled by the French name, <gloss type="menu" target="#I5">the food’s <span style="color:#11A2A7">authentically Middle Eastern</span>, <span style="color:#11A2A7">straightforward</span> and <span style="color:#11A2A7">generous</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="I6">Patisserie Sainte-Anne</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Bakeries</corr></choice></rs> <rs type="style">French</rs> <addrName>Hammersmith</addrName><num type="price" value="1"><supplied>￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#I6">Hardly known for its pretty fancies, Hammersmith is moving into the fast lane with this <span style="color:#11A2A7">on-trend</span> <span style="color:#11A2A7">Parisian bakery/patisserie/café</span>. <span style="color:#11A2A7">Retro-patterned wallpaper</span> and <span style="color:#11A2A7">lime-coloured walls</span> set the scene, and there are a few <span style="color:#11A2A7">tables inside (and out back)</span> if you want to eat in</gloss>. <gloss type="cuisine" target="#I6.1"><span style="color:#11A2A7">Top-rate</span> <span style="color:#11A2A7">crusty</span></gloss> <name role="specialty" xml:id="I6.1" type="baked">baguettes</name> and <name role="specialty" xml:id="I6.2" type="baked">soft milk breads</name> <gloss type="cuisine" target="#I6.2">host <span style="color:#11A2A7">life-affirming</span> fillings</gloss>, while the patisserie includes the <gloss type="cuisine" target="#I6.3"><span style="color:#11A2A7">best</span></gloss> <name role="specialty" xml:id="I6.3" type="dishes">tarte aux pommes</name> we’ve tasted in London.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="I7">Potli</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Indian</rs> <addrName>Hammersmith</addrName><num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#I7">With its <span style="color:#11A2A7">beach-style wooden bar</span>, <span style="color:#11A2A7">hessian cushions</span>, <span style="color:#11A2A7">beads</span> and <span style="color:#11A2A7">quirky curios</span>, Potli has a <span style="color:#11A2A7">tropical street-bazaar vibe</span></gloss>. Locals visit for <name role="specialty" xml:id="I7.1" type="dishes">classic curries</name>, <name role="specialty" xml:id="I7.2" type="dishes">smoky grills</name> and <name role="specialty" xml:id="I7.3" type="small plates">regional riffs</name> from all corners of the subcontinent – don’t miss the <name role="specialty" xml:id="I7.4" type="dishes">steamed banana-leaf packets stuffed with Gujarati-style prawns</name> or the <name role="specialty" xml:id="I7.5" type="dishes">mega rogan josh lamb shank</name> (enough for two). Drinks range from <gloss type="cuisine" target="#I7.6"><span style="color:#11A2A7">spiced</span></gloss> <name role="specialty" xml:id="I7.6" type="beverages">martinis</name> to bottles of <name role="specialty" xml:id="I7.7" type="dishes">Meantime IPA</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="I8">River Café</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice></rs> <rs type="style">Italian</rs> <addrName>Hammersmith</addrName><num type="price" value="4"><supplied>￡￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#I8">Set back from the Thames Path, the Michelin-starred River Café is a <span style="color:#11A2A7">riverside icon</span> in its own right</gloss>. <gloss type="menu" target="#I8"><span style="color:#11A2A7">Warm</span>, <span style="color:#11A2A7">buzzy</span> and <span style="color:#11A2A7">expensive</span> (in a <span style="color:#11A2A7">semi-casual</span> way), it’s dedicated to serving <span style="color:#11A2A7">unfussy</span> yet <span style="color:#11A2A7">stunning</span> Italian food based on <span style="color:#11A2A7">artisanal seasonal ingredients</span>. OK, <span style="color:#11A2A7">prices are excruciating</span>, but <span style="color:#11A2A7">portions are generous</span> – go for a <span style="color:#11A2A7">summer lunch</span></gloss>, <gloss type="environment" target="#I8">sit on the terrace and live it large like an <span style="color:#11A2A7">A-lister</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+            </div1>
+        </body>
+    </text>
+    
+   
+    
+    <text>
+        <front>
+            <div1 type="abstract">
+                <note place="top"><supplied>https://www.timeout.com/london/restaurants/the-best-restaurants-in-fitzrovia </supplied></note>
+                <head type="main">Fitzrovia</head>
+                <opener>
+                    <salute>Looking for a bite in thriving Fitzrovia? From high-end restaurants to buzzy burger and hot-dog joints, the area has it all</salute>
+                    <byline>By<docAuthor><supplied>Time Out London Food &amp; Drink</supplied></docAuthor></byline> <dateline>Posted: <date when="2019-10-30">Wednesday October 30 2019</date></dateline>               
+                </opener>    
+            </div1>
+        </front>
+        
+        <body> 
+            <!-- [ body of text 10 ... ] -->
+            <div1 type="main">
+                <num type='avgPrice' value="2.5"><supplied>￡￡-￡￡￡</supplied></num>
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J1">Bao Fitzrovia</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style"><choice><sic>Taiwanese</sic><corr>Chinese</corr></choice></rs> <addrName>Fitzrovia</addrName><num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">If you’re fed up with queuing for your favourite bao fix, book a table at the Fitzrovia branch of this renowned Taiwanese bun specialist. <gloss type="menu" target="#J1">All the <span style="color:#11A2A7">usual favourites</span> are here</gloss> – the <name role="specialty" xml:id="J1.1" type="small plates">confit pork with crispy onions</name> <gloss type="cuisine" target="#J1.1">is a <span style="color:#11A2A7">must</span></gloss> – but there are also some <gloss type="cuisine" target="#J1.2"><span style="color:#11A2A7">excellent</span></gloss> <name role="specialty" xml:id="J1.2" type="rice noodles">rice bowls</name> and <name role="specialty" xml:id="J1.3" type="small plates">xiao chi (small eats)</name><gloss type="cuisine" target="#J1.3"> for <span style="color:#11A2A7">grazing</span> and <span style="color:#11A2A7">sharing</span></gloss> (we love the <name role="specialty" xml:id="J1.4" type="dishes">beef cheek and tendon nuggets</name>). Otherwise, <gloss type="environment" target="#J1">go with some mates, reserve a communal table in the <span style="color:#11A2A7">basement</span></gloss> and order the ‘<name role="specialty" xml:id="J1.5" type="full courses">P.P.P feast</name>’.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Order delivery</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J2">Barrica</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Spanish</rs> <addrName>Goodge Street</addrName><num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">For years, this elder sibling of Soho’s Copita has been <gloss type="environment" target="#J2">offering fans a proper taste of <span style="color:#11A2A7">laidback</span> Spain with <span style="color:#11A2A7">smart decor</span> to match. <span style="color:#11A2A7">Oak furniture</span>, <span style="color:#11A2A7">chequerboard floor tiles</span> and <span style="color:#11A2A7">sunny yellow walls</span> set the scene</gloss> for some <gloss type="menu" target="#J2"><span style="color:#11A2A7">impressively consistent tapas</span></gloss> – not only <name role="specialty" xml:id="J2.1" type="small plates">Padrón peppers</name> and <name role="specialty" xml:id="J2.2" type="small plates">croquetas</name>, but also <gloss type="menu" target="#J2"><span style="color:#11A2A7">ambitious</span> ideas</gloss> along the lines of <name role="specialty" xml:id="J2.3" type="dishes">chargrilled chorizo with piquillo sauce</name> and <name role="specialty" xml:id="J2.4" type="veggies">saffron-pickled cabbage</name>. There’s a serious list of <name role="specialty" xml:id="J2.5" type="beverages">wines</name> and <name role="specialty" xml:id="J2.6" type="beverages">sherries</name> by the glass too. And <gloss type="environment" target="#J2">you can <span style="color:#11A2A7">book ahead</span></gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Order delivery</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J3">Berners Tavern</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Fine dining</corr></choice><supplied> Bars</supplied></rs> <rs type="style">British</rs> <addrName>Fitzrovia</addrName><num type="price" value="4"><supplied>￡￡￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#J3"><span style="color:#11A2A7">All-out glamour</span> in one of London’s <span style="color:#11A2A7">slickest</span> metropolitan dining rooms is the promise at this swaggering Jason Atherton venue within Fitzrovia’s <span style="color:#11A2A7">splendid</span> Edition Hotel (think <span style="color:#11A2A7">opulent chandeliers</span>, <span style="color:#11A2A7">wall-to-wall artworks</span></gloss> and <gloss type="service" target="#J3">a bevy of <span style="color:#11A2A7">properly elegant</span> staff</gloss>). <gloss type="menu" target="#J3"><span style="color:#11A2A7">Top-drawer</span> cosmopolitan food</gloss> and <gloss type="cuisine" target="#J3.2">smart</gloss> <name role="specialty" xml:id="J3.1" type="beverages">cocktails</name> add to <gloss type="environment" target="#J3">the <span style="color:#11A2A7">fabulousness</span> of the Ian Schrager-designed space, so put on your glad rags and enter the <span style="color:#11A2A7">kingdom of the beautiful people</span></gloss>. <gloss type="tips" target="#J3">Just remember to bring some <span style="color:#11A2A7">serious cashish</span></gloss>, though.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Buy</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J4">Bonnie Gull Seafood Shack</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">British</rs> <rs type="ingredient"><supplied>Seafood&amp;Steak</supplied></rs> <addrName>Soho</addrName><num type="price" value="2"><supplied>￡￡</supplied></num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#J4">On a villagey corner of Foley Street, Bonnie Gull’s Fitzrovia is a <span style="color:#11A2A7">dinky beauty</span> with <span style="color:#11A2A7">jaunty decor</span> evoking a <span style="color:#11A2A7">seafood shack-feel</span></gloss>, featuring <gloss type="menu" target="#J5">a menu that <span style="color:#11A2A7">whisks you away to the seaside</span></gloss>. Come here for <gloss type="cuisine" target="#J4.1"><span style="color:#11A2A7">fastidiously fresh</span> and <span style="color:#11A2A7">ding-ding-delicious</span></gloss> <name role="specialty" xml:id="J4.1" type="small plates">small plates</name>, <name role="specialty" xml:id="J4.2" type="dishes">grilled fish</name> and other <name role="specialty" xml:id="J4.3" type="small plates">maritime treats</name> from old Blighty. The <name role="specialty" xml:id="J4.4" type="dishes">rock oysters</name>, <name role="specialty" xml:id="J4.5" type="dishes">fishcakes</name> and <name role="specialty" xml:id="J4.6" type="dishes">battered haddock</name> are <gloss type="cuisine" target="#J4.6">must-order fixtures</gloss>. <gloss type="environment" target="#J4">Close your eyes and you’ll feel as if you’re breathing in the sea air</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Book online</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J5">Bubbledogs</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Bars and pubs Wine bars</sic><corr>Bars</corr></choice><supplied> Casual dining</supplied></rs> <rs type="style"><supplied>British</supplied></rs><addrName>Fitzrovia</addrName><num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#J5">Although it was given a <span style="color:#11A2A7">chic</span> revamp in 2019 with <span style="color:#11A2A7">plush banquettes</span>, <span style="color:#11A2A7">colourful stools</span> and <span style="color:#11A2A7">deep purple tones</span></gloss>, Bubbledogs is still in the business of doling out a kooky mix of <name role="specialty" xml:id="J5.1" type="fast food">outré hot dogs</name> and grower <name role="specialty" xml:id="J5.2" type="beverages">champagne</name> to a lively Fitzrovia crowd. The dogs have names like ‘<name role="specialty" xml:id="J5.3" type="fast food">Sloppy Joe</name>’, and <gloss type="cuisine" target="#J5.3">they’re served with <span style="color:#11A2A7">lush dips</span> and <span style="color:#11A2A7">tots</span> (<span style="color:#11A2A7">short, crunchy cylinders of fried potato</span>)</gloss>. <gloss type="cuisine" target="#J5.2">The bubbles, selected by co-owner Sandia Chang, are all <span style="color:#11A2A7">from small elite growers</span></gloss>. Go for the fizz and the vibe.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J6">Circolo Popolare</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Italian</rs> <addrName>Fitzrovia</addrName><num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#J6">A <span style="color:#11A2A7">huge but grotto-esque</span> sibling to Shoreditch’s chintzy cheese-fest Gloria, this Fitzrovia spot looks simply <span style="color:#11A2A7">magical</span> with its strings of <span style="color:#11A2A7">fairy lights</span>, <span style="color:#11A2A7">kaleidoscopic colours</span> and <span style="color:#11A2A7">fronds of greenery</span> dangling from the rafters</gloss>. <gloss type="menu" target="#J6">The kitchen serves up a <span style="color:#11A2A7">wide-ranging</span> <span style="color:#11A2A7">trattoria-style</span> menu, although we advise sticking to the <span style="color:#11A2A7">brilliantly executed small stuff</span> rather than the more substantial pizzas, pastas and mains</gloss>. Either way, Circolo is a breath-takingly inviting space – and <gloss type="tips" target="#J6">you can <span style="color:#11A2A7">book ahead</span> at certain times</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J7">Clipstone</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">British</rs> <addrName>Fitzrovia</addrName><num type="price" value="2">￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="environment" target="#J7">The very model of a <span style="color:#11A2A7">smart-casual</span> neighbourhood restaurant, this sibling of Portland is quietly <span style="color:#11A2A7">chic</span>, <span style="color:#11A2A7">interesting</span></gloss> and exactly what’s required for <gloss type="menu" target="#J7">a <span style="color:#11A2A7">sociable well-priced business lunch</span> or a <span style="color:#11A2A7">tête-à-tête supper</span>. <span style="color:#11A2A7">Seasonal small plates</span>, <span style="color:#11A2A7">sharing dishes</span> and <span style="color:#11A2A7">timeless brasserie classics</span> are all <span style="color:#11A2A7">up to standard</span></gloss> – <name role="specialty" xml:id="J7.1" type="dishes">cod with girolles, salsify and ponzu butter</name> is <gloss type="cuisine" target="#J7.1"><span style="color:#11A2A7">typical</span></gloss> – while <gloss type="service" target="#J7"><span style="color:#11A2A7">genial</span> staff</gloss>, <gloss type="cuisine" target="#J7.2">twisted <span style="color:#11A2A7">vintage</span></gloss> <name role="specialty" xml:id="J7.2" type="beverages">cocktails</name> and <gloss type="cuisine" target="#J7.3"><span style="color:#11A2A7">decent</span></gloss> <name role="specialty" xml:id="J7.3" type="beverages">wines</name> <gloss type="cuisine" target="#J7.3">(including some by-the-glass rarities help things along nicely</gloss>).</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+                
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J8">Hakkasan</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Chinese</rs> <addrName>Tottenham Court Road</addrName><num type="price" value="4">￡￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="tips" target="#J8">If payday and date night coincide, then it’s off to Hakkasan with you</gloss>: this <gloss type="environment" target="#J8"><span style="color:#11A2A7">slick</span>, <span style="color:#11A2A7">sexy</span> Cantonese restaurant has been thrilling spendy Londoners since it burst onto the dining scene in 2001</gloss>. <gloss type="environment" target="#J8">Hakkasan’s <span style="color:#11A2A7">darkened interior</span>, with its <span style="color:#11A2A7">carved lattices</span>, <span style="color:#11A2A7">sliding screens</span> and <span style="color:#11A2A7">thumping music</span>, is a <span style="color:#11A2A7">restaurant/club hybrid</span> whose shadows could harbour any number of <span style="color:#11A2A7">famous faces</span></gloss>. <gloss type="menu" target="#J8">The kitchen’s take on <span style="color:#11A2A7">Cantonese cuisine</span> shamelessly <span style="color:#11A2A7">name-drops big-ticket ingredients</span>, with <span style="color:#11A2A7">luxe</span> offerings</gloss> ranging from <gloss type="cuisine" target="#J8.1"><span style="color:#11A2A7">peerless</span></gloss> <name role="specialty" xml:id="J8.1" type="small plates">dim sum</name> to signatures such as <name role="specialty" xml:id="J8.2" type="full courses">roasted silver cod with champagne and honey</name>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                        <p><surplus reason="invalid">Order delivery</surplus></p>
+                    </div3>
+                </div2>
+
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J9">Herman ze German</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Quick bites</corr></choice></rs> <rs type="style">German</rs> <addrName>Fitzrovia</addrName><num type="price" value="1">￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal">Fitzrovia’s fanciest restaurant it is not, but this Bavarian sausage-seller is still one of the best places to part with za lunchtime tenner. <gloss type="menu" target="#J9"><span style="color:#11A2A7">Queueing for your mea</span>l, <span style="color:#11A2A7">fast-food style</span>, gives you time to square the venue’s <span style="color:#11A2A7">jokey menu</span></gloss> and <gloss type="environment" target="#J9"><span style="color:#11A2A7">ironic soundtrack</span> of <span style="color:#11A2A7">German techno</span> with that supposedly AWOL <span style="color:#11A2A7">sense of humour</span></gloss>. When you bite into your <name role="specialty" xml:id="J9.1" type="fast food">banger</name>, <gloss type="cuisine" target="#J9.1">you’ll be pleased the Germans take the things that matter seriously: these <span style="color:#11A2A7">Black Forest beauties</span> are <span style="color:#11A2A7">100 percent springy</span>, <span style="color:#11A2A7">meaty wonderfulness</span></gloss>. Prepare for the wurst.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+
+                <div2>
+                    <head type="subtitle"><name role="restaurant" xml:id="J10">Honey &amp; Co</name></head>
+                    <p><desc rend="bold"><rs type="occasion"><choice><sic>Restaurants</sic><corr>Casual dining</corr></choice></rs> <rs type="style">Middle Eastern</rs> <addrName>Warren Street</addrName><num type="price" value="3">￡￡￡</num></desc></p>                            
+                    <div3>
+                        <p><desc rend="normal"><gloss type="menu" target="#J10">Run by a husband and wife team with Ottolenghi credentials, this <span style="color:#11A2A7">cute Israeli bolthole</span> serves up <span style="color:#11A2A7">colourful Middle Eastern dishes</span> inspired by <span style="color:#11A2A7">home cooking</span> and <span style="color:#11A2A7">Jerusalem street food</span></gloss>. The window is filled with <name role="specialty" xml:id="J10.1" type="baked">breads</name>, <name role="specialty" xml:id="J10.2" type="desserts">pastries</name> and exotic <name role="specialty" xml:id="J10.3" type="desserts">jams</name>, while the menu always includes <gloss type="cuisine" target="#J10.4">stonking seasonal</gloss> <name role="specialty" xml:id="J10.4" type="fast food">falafels</name> alongside <name role="specialty" xml:id="J10.5" type="small plates">pastillas</name>, <name role="specialty" xml:id="J10.6" type="dishes">shawarmas</name>, <name role="specialty" xml:id="J10.7" type="dishes">tagines</name> and <name role="specialty" xml:id="J10.8" type="dishes">slow-cooked stews</name> – although <gloss type="tips" target="#J10">prices are on the high side for a neighbourhood drop-in. For a cheaper deal, try canteen-style sibling Honey &amp; Smoke nearby</gloss>.</desc></p>
+                        <p><surplus reason="invalid">Read more</surplus></p>
+                    </div3>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI>
